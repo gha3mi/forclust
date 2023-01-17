@@ -1,0 +1,11 @@
+name       = "forclust"
+version    = "0.1.0"
+author     = "Seyed Ali Ghasemi"
+maintainer = "info@gha3mi.com"
+copyright  = "Copyright 2023, Seyed Ali Ghasemi"
+[build]
+auto-executables = true
+auto-tests       = true
+auto-examples    = true
+[install]
+library          = false
