@@ -104,13 +104,22 @@ contains
    !===============================================================================
    subroutine find_number_of_cpus(this)
       class(linux_nodes), intent(inout) :: this
-      INTEGER                           :: nunit
+      integer                           :: nunit
+      logical                           :: ex
+      character(len=:), allocatable     :: file_name
 
       ! todo: get total number of linux nodes
       call execute_command_line ("echo $(nproc --all) > forclust.tmp")
-      open(newunit=nunit, file='forclust.tmp', action='read')
-      read(nunit, *) this%ncpus
-      close(nunit)
+
+      file_name = 'forclust.tmp'
+      inquire(file=file_name, exist=ex)
+      if (ex) then
+         open(newunit=nunit, file=file_name, action='read')
+         read(nunit, *) this%ncpus
+         close(nunit)
+      else
+         error stop "file not found: "//file_name
+      end if
    end subroutine find_number_of_cpus
    !===============================================================================
 
@@ -122,6 +131,8 @@ contains
       integer                           :: nunit, stat, i
       integer                           :: temp
       character(len=100)                :: temp_char
+      logical                           :: ex
+      character(len=:), allocatable     :: file_name
 
       ! check if intel_pstate exists
       call this%is_intel_pstate_available()
@@ -145,54 +156,108 @@ contains
          this%cpu(i)%path_cpu = adjustl(trim(current_cpu_path))
 
          ! read base frequency
-         open(newunit=nunit, file=this%cpu(i)%path_cpu//"/cpufreq/base_frequency", iostat=stat)
-         read(nunit, *) this%cpu(i)%base_frequency
-         close(nunit)
+         file_name = this%cpu(i)%path_cpu//"/cpufreq/base_frequency"
+         inquire(file=file_name, exist=ex)
+         if (ex) then
+            open(newunit=nunit, file=file_name, iostat=stat)
+            read(nunit, *) this%cpu(i)%base_frequency
+            close(nunit)
+         else
+            error stop "file not found: "//file_name
+         endif
 
          ! read cpuinfo max frequency
-         open(newunit=nunit, file=this%cpu(i)%path_cpu//"/cpufreq/cpuinfo_max_freq", iostat=stat)
-         read(nunit, *) this%cpu(i)%cpuinfo_max_freq
-         close(nunit)
-
+         file_name = this%cpu(i)%path_cpu//"/cpufreq/cpuinfo_max_freq"
+         inquire(file=file_name, exist=ex)
+         if (ex) then
+            open(newunit=nunit, file=file_name, iostat=stat)
+            read(nunit, *) this%cpu(i)%cpuinfo_max_freq
+            close(nunit)
+         else
+            error stop "file not found: "//file_name
+         endif
+         
          ! read cpuinfo min frequency
-         open(newunit=nunit, file=this%cpu(i)%path_cpu//"/cpufreq/cpuinfo_min_freq", iostat=stat)
-         read(nunit, *) this%cpu(i)%cpuinfo_min_freq
-         close(nunit)
+         file_name = this%cpu(i)%path_cpu//"/cpufreq/cpuinfo_min_freq"
+         inquire(file=file_name, exist=ex)
+         if (ex) then
+            open(newunit=nunit, file=file_name, iostat=stat)
+            read(nunit, *) this%cpu(i)%cpuinfo_min_freq
+            close(nunit)
+         else
+            error stop "file not found: "//file_name
+         endif
 
          ! read scaling cur frequency
-         open(newunit=nunit, file=this%cpu(i)%path_cpu//"/cpufreq/scaling_cur_freq", iostat=stat)
-         read(nunit, *) this%cpu(i)%scaling_cur_freq
-         close(nunit)
+         file_name = this%cpu(i)%path_cpu//"/cpufreq/scaling_cur_freq"
+         inquire(file=file_name, exist=ex)
+         if (ex) then
+            open(newunit=nunit, file=file_name, iostat=stat)
+            read(nunit, *) this%cpu(i)%scaling_cur_freq
+            close(nunit)
+         else
+            error stop "file not found: "//file_name
+         endif
 
          ! read scaling max frequency
-         open(newunit=nunit, file=this%cpu(i)%path_cpu//"/cpufreq/scaling_max_freq", iostat=stat)
-         read(nunit, *) this%cpu(i)%scaling_max_freq
-         close(nunit)
+         file_name = this%cpu(i)%path_cpu//"/cpufreq/scaling_max_freq"
+         inquire(file=file_name, exist=ex)
+         if (ex) then
+            open(newunit=nunit, file=this%cpu(i)%path_cpu//"/cpufreq/scaling_max_freq", iostat=stat)
+            read(nunit, *) this%cpu(i)%scaling_max_freq
+            close(nunit)
+         else
+            error stop "file not found: "//file_name
+         endif
 
          ! read scaling min frequency
-         open(newunit=nunit, file=this%cpu(i)%path_cpu//"/cpufreq/scaling_min_freq", iostat=stat)
-         read(nunit, *) this%cpu(i)%scaling_min_freq
-         close(nunit)
+         file_name = this%cpu(i)%path_cpu//"/cpufreq/scaling_min_freq"
+         inquire(file=file_name, exist=ex)
+         if (ex) then
+            open(newunit=nunit, file=file_name, iostat=stat)
+            read(nunit, *) this%cpu(i)%scaling_min_freq
+            close(nunit)
+         else
+            error stop "file not found: "//file_name
+         endif
 
          ! read scaling governor
-         open(newunit=nunit, file=this%cpu(i)%path_cpu//"/cpufreq/scaling_governor", iostat=stat)
-         read(nunit, *) temp_char
-         this%cpu(i)%scaling_governor = adjustl(trim(temp_char))
-         close(nunit)
+         file_name = this%cpu(i)%path_cpu//"/cpufreq/scaling_governor"
+         inquire(file=file_name, exist=ex)
+         if (ex) then
+            open(newunit=nunit, file=file_name, iostat=stat)
+            read(nunit, *) temp_char
+            this%cpu(i)%scaling_governor = adjustl(trim(temp_char))
+            close(nunit)
+         else
+            error stop "file not found: "//file_name
+         endif
 
          ! read energy performance preference
-         open(newunit=nunit, file=this%cpu(i)%path_cpu//"/cpufreq/energy_performance_preference", iostat=stat)
-         read(nunit, *) temp_char
-         this%cpu(i)%energy_performance_preference = adjustl(trim(temp_char))
-         close(nunit)
+         file_name = this%cpu(i)%path_cpu//"/cpufreq/energy_performance_preference"
+         inquire(file=file_name, exist=ex)
+         if (ex) then
+            open(newunit=nunit, file=file_name, iostat=stat)
+            read(nunit, *) temp_char
+            this%cpu(i)%energy_performance_preference = adjustl(trim(temp_char))
+            close(nunit)
+         else
+            error stop "file not found: "//file_name
+         endif
       end do
 
       ! read online
       this%cpu(1)%online = 1
       do concurrent (i = 2:this%ncpus)
-         open(newunit=nunit, file=this%cpu(i)%path_cpu//"/online", iostat=stat)
-         read(nunit, *) this%cpu(i)%online
-         close(nunit)
+         file_name = this%cpu(i)%path_cpu//"/online"
+         inquire(file=file_name, exist=ex)
+         if (ex) then
+            open(newunit=nunit, file=this%cpu(i)%path_cpu//"/online", iostat=stat)
+            read(nunit, *) this%cpu(i)%online
+            close(nunit)
+         else
+            error stop "file not found: "//file_name
+         endif
       end do
    end subroutine select_node
    !===============================================================================
@@ -301,12 +366,20 @@ contains
    subroutine set_cpu_offline(this)
       class(linux_cpu), intent(inout) :: this
       integer                         :: nunit, stat
+      logical                         :: ex
+      character(len=:), allocatable   :: file_name
 
       this%online = 0
 
-      open(newunit=nunit, file=this%path_cpu//"/online", iostat=stat)
-      write(nunit, '(i0)') this%online
-      close(nunit)
+      file_name = this%path_cpu//"/online"
+      inquire(file=file_name, exist=ex)
+      if (ex) then
+         open(newunit=nunit, file=file_name, iostat=stat)
+         write(nunit, '(i0)') this%online
+         close(nunit)
+      else
+         error stop "file not found: "//file_name
+      endif
    end subroutine set_cpu_offline
    !===============================================================================
 
@@ -315,12 +388,20 @@ contains
    subroutine set_cpu_online(this)
       class(linux_cpu), intent(inout) :: this
       integer                         :: nunit, stat
+      logical                         :: ex
+      character(len=:), allocatable   :: file_name
 
       this%online = 1
 
-      open(newunit=nunit, file=this%path_cpu//"/online", iostat=stat)
-      write(nunit, '(i0)') this%online
-      close(nunit)
+      file_name = this%path_cpu//"/online"
+      inquire(file=file_name, exist=ex)
+      if (ex) then
+         open(newunit=nunit, file=file_name, iostat=stat)
+         write(nunit, '(i0)') this%online
+         close(nunit)
+      else
+         error stop "file not found: "//file_name
+      endif
    end subroutine set_cpu_online
    !===============================================================================
 
@@ -330,12 +411,20 @@ contains
       class(linux_cpu), intent(inout) :: this
       integer, intent(in)             :: max_freq
       integer                         :: nunit, stat
+      logical                         :: ex
+      character(len=:), allocatable   :: file_name
 
       this%scaling_max_freq = max_freq
 
-      open(newunit=nunit, file=this%path_cpu//"/cpufreq/scaling_max_freq", iostat=stat)
-      write(nunit, '(i0)') this%scaling_max_freq
-      close(nunit)
+      file_name = this%path_cpu//"/cpufreq/scaling_max_freq"
+      inquire(file=file_name, exist=ex)
+      if (ex) then
+         open(newunit=nunit, file=file_name, iostat=stat)
+         write(nunit, '(i0)') this%scaling_max_freq
+         close(nunit)
+      else
+         error stop "file not found: "//file_name
+      endif
    end subroutine set_cpu_scaling_max_freq
    !===============================================================================
 
@@ -345,12 +434,20 @@ contains
       class(linux_cpu), intent(inout) :: this
       integer, intent(in)             :: min_freq
       integer                         :: nunit, stat
+      logical                         :: ex
+      character(len=:), allocatable   :: file_name
 
       this%scaling_min_freq = min_freq
 
-      open(newunit=nunit, file=this%path_cpu//"/cpufreq/scaling_min_freq", iostat=stat)
-      write(nunit, '(i0)') this%scaling_min_freq
-      close(nunit)
+      file_name = this%path_cpu//"/cpufreq/scaling_min_freq"
+      inquire(file=file_name, exist=ex)
+      if (ex) then
+         open(newunit=nunit, file=file_name, iostat=stat)
+         write(nunit, '(i0)') this%scaling_min_freq
+         close(nunit)
+      else
+         error stop "file not found: "//file_name
+      endif
    end subroutine set_cpu_scaling_min_freq
    !===============================================================================
 
@@ -360,12 +457,20 @@ contains
       class(linux_cpu), intent(inout) :: this
       character(len=*), intent(in)    :: scaling_governor
       integer                         :: nunit, stat
+      logical                         :: ex
+      character(len=:), allocatable   :: file_name
 
       this%scaling_governor = scaling_governor
 
-      open(newunit=nunit, file=this%path_cpu//"/cpufreq/scaling_governor", iostat=stat)
-      write(nunit, '(a)') this%scaling_governor
-      close(nunit)
+      file_name = this%path_cpu//"/cpufreq/scaling_governor"
+      inquire(file=file_name, exist=ex)
+      if (ex) then
+         open(newunit=nunit, file=this%path_cpu//"/cpufreq/scaling_governor", iostat=stat)
+         write(nunit, '(a)') this%scaling_governor
+         close(nunit)
+      else
+         error stop "file not found: "//file_name
+      endif
    end subroutine set_cpu_scaling_governor
    !===============================================================================
 
@@ -375,12 +480,20 @@ contains
       class(linux_cpu), intent(inout) :: this
       character(len=*), intent(in)    :: energy_performance_preference
       integer                         :: nunit, stat
+      logical                         :: ex
+      character(len=:), allocatable   :: file_name
 
       this%energy_performance_preference = energy_performance_preference
 
-      open(newunit=nunit, file=this%path_cpu//"/cpufreq/energy_performance_preference", iostat=stat)
-      write(nunit, '(a)') this%energy_performance_preference
-      close(nunit)
+      file_name = this%path_cpu//"/cpufreq/energy_performance_preference"
+      inquire(file=file_name, exist=ex)
+      if (ex) then
+         open(newunit=nunit, file=file_name, iostat=stat)
+         write(nunit, '(a)') this%energy_performance_preference
+         close(nunit)
+      else
+         error stop "file not found: "//file_name
+      endif
    end subroutine set_cpu_energy_performance_preference
    !===============================================================================
 
