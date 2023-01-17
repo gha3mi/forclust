@@ -1,3 +1,4 @@
+!> author: Seyed Ali Ghasemi
 module forclust
 
    implicit none
@@ -75,6 +76,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine find_number_of_nodes(this)
       class(cluster), intent(inout) :: this
 
@@ -85,6 +87,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine select_linux(this)
       class(cluster), intent(inout) :: this
       character(len=100)            :: current_node_path
@@ -102,6 +105,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine find_number_of_cpus(this)
       class(linux_nodes), intent(inout) :: this
       integer                           :: nunit
@@ -125,6 +129,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine select_node(this)
       class(linux_nodes), intent(inout) :: this
       character(len=100)                :: current_cpu_path
@@ -264,6 +269,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine is_cpu_online(this, online)
       class(linux_cpu), intent(inout) :: this
       integer, intent(out), optional  :: online
@@ -275,6 +281,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine get_cpu_base_frequency(this, base_frequency)
       class(linux_cpu), intent(inout) :: this
       integer, intent(out), optional  :: base_frequency
@@ -286,6 +293,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine get_cpuinfo_max_frequency(this, cpuinfo_max_freq)
       class(linux_cpu), intent(inout) :: this
       integer, intent(out), optional  :: cpuinfo_max_freq
@@ -297,6 +305,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine get_cpuinfo_min_frequency(this, cpuinfo_min_freq)
       class(linux_cpu), intent(inout) :: this
       integer, intent(out), optional  :: cpuinfo_min_freq
@@ -308,6 +317,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine get_cpu_scaling_cur_frequency(this, scaling_cur_freq)
       class(linux_cpu), intent(inout) :: this
       integer, intent(out), optional  :: scaling_cur_freq
@@ -319,6 +329,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine get_cpu_scaling_max_frequency(this, scaling_max_freq)
       class(linux_cpu), intent(inout) :: this
       integer, intent(out), optional  :: scaling_max_freq
@@ -330,6 +341,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine get_cpu_scaling_min_frequency(this, scaling_min_freq)
       class(linux_cpu), intent(inout) :: this
       integer, intent(out), optional  :: scaling_min_freq
@@ -341,6 +353,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine get_cpu_scaling_governor(this, scaling_governor)
       class(linux_cpu), intent(inout)         :: this
       character(len=*), intent(out), optional :: scaling_governor
@@ -352,6 +365,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine get_cpu_energy_performance_preference(this, energy_performance_preference)
       class(linux_cpu), intent(inout) :: this
       character(len=*), intent(out), optional    :: energy_performance_preference
@@ -363,6 +377,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine set_cpu_offline(this)
       class(linux_cpu), intent(inout) :: this
       integer                         :: nunit, stat
@@ -385,6 +400,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine set_cpu_online(this)
       class(linux_cpu), intent(inout) :: this
       integer                         :: nunit, stat
@@ -407,6 +423,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine set_cpu_scaling_max_freq(this,max_freq)
       class(linux_cpu), intent(inout) :: this
       integer, intent(in)             :: max_freq
@@ -430,6 +447,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine set_cpu_scaling_min_freq(this,min_freq)
       class(linux_cpu), intent(inout) :: this
       integer, intent(in)             :: min_freq
@@ -453,6 +471,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine set_cpu_scaling_governor(this,scaling_governor)
       class(linux_cpu), intent(inout) :: this
       character(len=*), intent(in)    :: scaling_governor
@@ -476,6 +495,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine set_cpu_energy_performance_preference(this,energy_performance_preference)
       class(linux_cpu), intent(inout) :: this
       character(len=*), intent(in)    :: energy_performance_preference
@@ -499,6 +519,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine is_intel_pstate_available(this)
       ! bug: it does not depend on a node
       class(linux_nodes), intent(inout) :: this
@@ -515,6 +536,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine get_intel_turbo(this,turbo)
       class(linux_nodes), intent(inout)         :: this
       character(len=*),   intent(out), optional :: turbo
@@ -526,6 +548,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine set_intel_turbo(this,turbo)
       ! bug: it does not depend on a node
       class(linux_nodes), intent(inout) :: this
@@ -547,6 +570,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine set_cpu_debug_switch(this,debug)
       class(linux_cpu), intent(inout) :: this
       character(len=*),   intent(in)  :: debug
@@ -557,6 +581,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine set_node_debug_switch(this,debug)
       class(linux_nodes), intent(inout) :: this
       character(len=*),   intent(in)    :: debug
@@ -567,6 +592,7 @@ contains
 
 
    !===============================================================================
+   !> author: Seyed Ali Ghasemi
    subroutine print_all_cluster_info(this)
       class(cluster), intent(inout) :: this
       integer                       :: n, c
