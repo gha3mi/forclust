@@ -97,7 +97,7 @@ contains
       if (.not. allocated(this%node)) allocate(this%node(this%nnodes))
 
       do concurrent (i = 1:this%nnodes)
-         write (current_node_path, "(a,i0,a)") "tmp/system/node/node",i-1,"/"
+         write (current_node_path, "(a,i0,a)") "/sys/devices/system/node/node",i-1,"/"
          this%node(i)%path_node=adjustl(trim(current_node_path))
       end do
    end subroutine select_linux
@@ -144,7 +144,7 @@ contains
       call this%is_intel_pstate_available()
       if (this%is_intel_pstate == 1) then
          ! read turbo
-         open(newunit=nunit, file='tmp/system/cpu/intel_pstate/no_turbo', iostat=stat)
+         open(newunit=nunit, file='/sys/devices/system/cpu/intel_pstate/no_turbo', iostat=stat)
          read(nunit, *) temp
          close(nunit)
          if (temp==1) this%turbo = 'off'
@@ -536,7 +536,7 @@ contains
       integer                           :: is_intel_pstate
       logical                           :: ex
 
-      inquire(file='tmp/system/cpu/intel_pstate', exist=ex)
+      inquire(file='/sys/devices/system/cpu/intel_pstate', exist=ex)
       if (ex)       is_intel_pstate = 1
       if (.not. ex) is_intel_pstate = 0
       this%is_intel_pstate = is_intel_pstate
@@ -570,7 +570,7 @@ contains
 
          this%turbo = turbo
 
-         open(newunit=nunit, file='tmp/system/cpu/intel_pstate/no_turbo', iostat=stat)
+         open(newunit=nunit, file='/sys/devices/system/cpu/intel_pstate/no_turbo', iostat=stat)
          if (turbo == 'on' ) write(nunit,'(i0)') 0
          if (turbo == 'off') write(nunit,'(i0)') 1
          close(nunit)
