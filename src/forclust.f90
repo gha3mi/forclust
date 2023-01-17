@@ -122,7 +122,7 @@ contains
          read(nunit, *) this%ncpus
          close(nunit)
       else
-         error stop "file not found: "//file_name
+         ! error stop "file not found: "//file_name
       end if
    end subroutine find_number_of_cpus
    !===============================================================================
@@ -168,7 +168,7 @@ contains
             read(nunit, *) this%cpu(i)%base_frequency
             close(nunit)
          else
-            error stop "file not found: "//file_name
+            ! error stop "file not found: "//file_name
          endif
 
          ! read cpuinfo max frequency
@@ -179,7 +179,7 @@ contains
             read(nunit, *) this%cpu(i)%cpuinfo_max_freq
             close(nunit)
          else
-            error stop "file not found: "//file_name
+            ! error stop "file not found: "//file_name
          endif
          
          ! read cpuinfo min frequency
@@ -190,7 +190,7 @@ contains
             read(nunit, *) this%cpu(i)%cpuinfo_min_freq
             close(nunit)
          else
-            error stop "file not found: "//file_name
+            ! error stop "file not found: "//file_name
          endif
 
          ! read scaling cur frequency
@@ -201,7 +201,7 @@ contains
             read(nunit, *) this%cpu(i)%scaling_cur_freq
             close(nunit)
          else
-            error stop "file not found: "//file_name
+            ! error stop "file not found: "//file_name
          endif
 
          ! read scaling max frequency
@@ -212,7 +212,7 @@ contains
             read(nunit, *) this%cpu(i)%scaling_max_freq
             close(nunit)
          else
-            error stop "file not found: "//file_name
+            ! error stop "file not found: "//file_name
          endif
 
          ! read scaling min frequency
@@ -223,7 +223,7 @@ contains
             read(nunit, *) this%cpu(i)%scaling_min_freq
             close(nunit)
          else
-            error stop "file not found: "//file_name
+            ! error stop "file not found: "//file_name
          endif
 
          ! read scaling governor
@@ -235,7 +235,7 @@ contains
             this%cpu(i)%scaling_governor = adjustl(trim(temp_char))
             close(nunit)
          else
-            error stop "file not found: "//file_name
+            ! error stop "file not found: "//file_name
          endif
 
          ! read energy performance preference
@@ -247,7 +247,7 @@ contains
             this%cpu(i)%energy_performance_preference = adjustl(trim(temp_char))
             close(nunit)
          else
-            error stop "file not found: "//file_name
+            ! error stop "file not found: "//file_name
          endif
       end do
 
@@ -261,7 +261,7 @@ contains
             read(nunit, *) this%cpu(i)%online
             close(nunit)
          else
-            error stop "file not found: "//file_name
+            ! error stop "file not found: "//file_name
          endif
       end do
    end subroutine select_node
@@ -393,7 +393,7 @@ contains
          write(nunit, '(i0)') this%online
          close(nunit)
       else
-         error stop "file not found: "//file_name
+         ! error stop "file not found: "//file_name
       endif
    end subroutine set_cpu_offline
    !===============================================================================
@@ -416,7 +416,7 @@ contains
          write(nunit, '(i0)') this%online
          close(nunit)
       else
-         error stop "file not found: "//file_name
+         ! error stop "file not found: "//file_name
       endif
    end subroutine set_cpu_online
    !===============================================================================
@@ -440,7 +440,7 @@ contains
          write(nunit, '(i0)') this%scaling_max_freq
          close(nunit)
       else
-         error stop "file not found: "//file_name
+         ! error stop "file not found: "//file_name
       endif
    end subroutine set_cpu_scaling_max_freq
    !===============================================================================
@@ -464,7 +464,7 @@ contains
          write(nunit, '(i0)') this%scaling_min_freq
          close(nunit)
       else
-         error stop "file not found: "//file_name
+         ! error stop "file not found: "//file_name
       endif
    end subroutine set_cpu_scaling_min_freq
    !===============================================================================
@@ -488,7 +488,7 @@ contains
          write(nunit, '(a)') this%scaling_governor
          close(nunit)
       else
-         error stop "file not found: "//file_name
+         ! error stop "file not found: "//file_name
       endif
    end subroutine set_cpu_scaling_governor
    !===============================================================================
@@ -512,7 +512,7 @@ contains
          write(nunit, '(a)') this%energy_performance_preference
          close(nunit)
       else
-         error stop "file not found: "//file_name
+         ! error stop "file not found: "//file_name
       endif
    end subroutine set_cpu_energy_performance_preference
    !===============================================================================
