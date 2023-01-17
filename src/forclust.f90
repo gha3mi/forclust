@@ -112,10 +112,10 @@ contains
       logical                           :: ex
       character(len=:), allocatable     :: file_name
 
-      ! todo: get total number of linux nodes
-      call execute_command_line ("echo $(nproc --all) > forclust.tmp")
+      ! todo: get total number of linux cpus
+      call execute_command_line ("echo $(nproc --all) > /tmp/forclust_ncpus")
 
-      file_name = 'forclust.tmp'
+      file_name = '/tmp/forclust_ncpus'
       inquire(file=file_name, exist=ex)
       if (ex) then
          open(newunit=nunit, file=file_name, action='read')
