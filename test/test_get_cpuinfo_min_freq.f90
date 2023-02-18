@@ -10,11 +10,11 @@ program test
    call my_pc%select()
      call my_pc%node(1)%select()
      call my_pc%node(1)%set_debug('off')
-       call my_pc%node(1)%cpu(1)%set_debug('on')
-       call my_pc%node(1)%cpu(1)%get_cpuinfo_min_freq()
+       call my_pc%node(1)%cpu(:)%set_debug('on')
+       call my_pc%node(1)%cpu(:)%get_cpuinfo_min_freq()
 
-       call my_pc%node(1)%cpu(1)%set_debug('off')
-       call my_pc%node(1)%cpu(1)%get_cpuinfo_min_freq()
+       call my_pc%node(1)%cpu(:)%set_debug('off')
+       call my_pc%node(1)%cpu(:)%get_cpuinfo_min_freq()
    call my_pc%deselect()
    
 end program test
