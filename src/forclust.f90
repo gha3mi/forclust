@@ -8,6 +8,25 @@ module forclust
    public :: cluster
 
    !===============================================================================
+   type :: linux_backlight
+      character(len=:), allocatable :: debug
+      character(len=:), allocatable :: path_backlight
+      integer                       :: actual_brightness
+      integer                       :: brightness
+      integer                       :: max_brightness
+   contains
+      procedure :: set_debug              => set_backlight_debug_switch
+      procedure :: select                 => select_backlight
+      procedure :: get_actual_brightness  => get_backlight_actual_brightness
+      procedure :: get_max_brightness     => get_backlight_max_brightness
+      procedure :: set_brightness         => set_backlight_brightness
+
+      procedure :: deselect               => deallocate_linux_backlight
+   end type linux_backlight
+   !===============================================================================
+
+
+   !===============================================================================
    type :: linux_cpu
       character(len=:), allocatable :: debug
       character(len=:), allocatable :: path_cpu
@@ -37,6 +56,8 @@ module forclust
       procedure :: set_scaling_min_freq   => set_cpu_scaling_min_freq
       procedure :: set_scaling_governor   => set_cpu_scaling_governor
       procedure :: set_energy_performance => set_cpu_energy_performance_preference
+
+      procedure :: deselect               => deallocate_linux_cpu
    end type linux_cpu
    !===============================================================================
 
@@ -56,6 +77,8 @@ module forclust
       procedure, private :: is_intel_pstate_available
       procedure          :: get_turbo                 => get_intel_turbo
       procedure          :: set_turbo                 => set_intel_turbo
+
+      procedure          :: deselect                  => deallocate_linux_nodes
    end type linux_nodes
    !===============================================================================
 
@@ -64,10 +87,13 @@ module forclust
    type :: cluster
       type(linux_nodes),  dimension(:), allocatable :: node
       integer                                       :: nnodes
+      type(linux_backlight)                         :: backlight
    contains
       procedure          :: select => select_linux
       procedure, private :: find_number_of_nodes ! todo:
       procedure          :: print_info            => print_all_cluster_info
+
+      procedure          :: deselect              => deallocate_cluster
    end type cluster
    !===============================================================================
 
@@ -91,6 +117,7 @@ contains
    subroutine select_linux(this)
       class(cluster), intent(inout) :: this
       character(len=100)            :: current_node_path
+      character(len=100)            :: backlight_path
       integer                       :: i
 
       call this%find_number_of_nodes()
@@ -100,6 +127,9 @@ contains
          write (current_node_path, "(a,i0,a)") "/sys/devices/system/node/node",i-1,"/"
          this%node(i)%path_node=adjustl(trim(current_node_path))
       end do
+
+      write (backlight_path, "(a,i0,a)") "/sys/class/backlight/intel_backlight"
+      this%backlight%path_backlight=adjustl(trim(backlight_path))
    end subroutine select_linux
    !===============================================================================
 
@@ -630,6 +660,149 @@ contains
       end do
 
    end subroutine print_all_cluster_info
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   subroutine select_backlight(this)
+      class(linux_backlight), intent(inout) :: this
+      integer                               :: nunit, stat
+      logical                               :: ex
+      character(len=:), allocatable         :: file_name
+
+      ! read actual brightness
+      file_name = this%path_backlight//"/actual_brightness"
+      inquire(file=file_name, exist=ex)
+      if (ex) then
+         open(newunit=nunit, file=file_name, iostat=stat)
+         read(nunit, *) this%actual_brightness
+         close(nunit)
+      else
+         this%actual_brightness = 0
+         ! error stop "file not found: "//file_name
+      endif
+
+      ! read max brightness
+      file_name = this%path_backlight//"/max_brightness"
+      inquire(file=file_name, exist=ex)
+      if (ex) then
+         open(newunit=nunit, file=file_name, iostat=stat)
+         read(nunit, *) this%max_brightness
+         close(nunit)
+      else
+         this%max_brightness = 0
+         ! error stop "file not found: "//file_name
+      endif
+
+   end subroutine select_backlight
+   !===============================================================================
+   
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   subroutine set_backlight_debug_switch(this,debug)
+      class(linux_backlight), intent(inout) :: this
+      character(len=*),       intent(in)    :: debug
+
+      this%debug = debug
+   end subroutine set_backlight_debug_switch
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   subroutine get_backlight_actual_brightness(this, actual_brightness)
+      class(linux_backlight), intent(inout)          :: this
+      integer,                intent(out),  optional :: actual_brightness
+
+      if (present(actual_brightness)) actual_brightness = this%actual_brightness
+      if (this%debug=='on') print'(a,i0)', 'actual brightness:         ', this%actual_brightness
+   end subroutine get_backlight_actual_brightness
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   subroutine get_backlight_max_brightness(this, max_brightness)
+      class(linux_backlight), intent(inout)          :: this
+      integer,                intent(out),  optional :: max_brightness
+
+      if (present(max_brightness)) max_brightness = this%max_brightness
+      if (this%debug=='on') print'(a,i0)', 'max brightness:         ', this%max_brightness
+   end subroutine get_backlight_max_brightness
+   !===============================================================================
+
+   
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   subroutine set_backlight_brightness(this,brightness)
+      class(linux_backlight), intent(inout) :: this
+      integer,                intent(in)    :: brightness
+      integer                               :: nunit, stat
+      logical                               :: ex
+      character(len=:), allocatable         :: file_name
+
+      this%brightness = brightness
+
+      file_name = this%path_backlight//"/brightness"
+      inquire(file=file_name, exist=ex)
+      if (ex) then
+         open(newunit=nunit, file=file_name, iostat=stat)
+         write(nunit, '(i0)') this%brightness
+         close(nunit)
+      else
+         ! error stop "file not found: "//file_name
+      endif
+   end subroutine set_backlight_brightness
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental subroutine deallocate_linux_backlight(this)
+      class(linux_backlight), intent(inout) :: this
+
+      if (allocated(this%debug))          deallocate(this%debug)
+      if (allocated(this%path_backlight)) deallocate(this%path_backlight)
+   end subroutine deallocate_linux_backlight
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental subroutine deallocate_linux_cpu(this)
+      class(linux_cpu), intent(inout) :: this
+
+      if (allocated(this%debug))                         deallocate(this%debug)
+      if (allocated(this%path_cpu))                      deallocate(this%path_cpu)
+      if (allocated(this%scaling_governor))              deallocate(this%scaling_governor)
+      if (allocated(this%energy_performance_preference)) deallocate(this%energy_performance_preference)
+   end subroutine deallocate_linux_cpu
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental subroutine deallocate_linux_nodes(this)
+      class(linux_nodes), intent(inout) :: this
+
+      if (allocated(this%debug))     deallocate(this%debug)
+      if (allocated(this%path_node)) deallocate(this%path_node)
+      if (allocated(this%turbo))     deallocate(this%turbo)
+      call this%cpu(:)%deselect()
+   end subroutine deallocate_linux_nodes
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental subroutine deallocate_cluster(this)
+      class(cluster), intent(inout) :: this
+
+      call this%node(:)%deselect()
+      call this%backlight%deselect()
+   end subroutine deallocate_cluster
    !===============================================================================
 
 end module forclust
