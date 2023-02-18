@@ -7,10 +7,13 @@ program test
 
    type(cluster) :: my_pc
 
-   !! ===================================================================================
-   !! Be careful and do not adjust any system settings until you know what you are doing.
-   !! For 'set' functions, you need sudo privileges.
-   !! ===================================================================================
+   ! ============================================================================
+   ! "Exercise caution and refrain from making any adjustments to system settings
+   !  unless you have a clear understanding of what you are doing."
+   !
+   ! For 'set' functions, you need sudo privileges.
+   ! ============================================================================
+
    call my_pc%select()
      call my_pc%node(1)%select()
      call my_pc%node(1)%set_debug('on')
