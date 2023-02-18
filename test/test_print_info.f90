@@ -9,5 +9,6 @@ program test
 
    call my_pc%select()
    call my_pc%print_info()
+   call my_pc%deselect()
 
 end program test

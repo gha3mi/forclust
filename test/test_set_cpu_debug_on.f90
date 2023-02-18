@@ -11,5 +11,6 @@ program test
      call my_pc%node(1)%select()
      call my_pc%node(1)%set_debug('off')
        call my_pc%node(1)%cpu(1)%set_debug('on')
+   call my_pc%deselect()
 
 end program test

@@ -8,5 +8,6 @@ program test
    type(cluster) :: my_pc
 
    call my_pc%select()
+   call my_pc%deselect()
 
 end program test

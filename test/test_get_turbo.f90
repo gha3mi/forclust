@@ -14,5 +14,6 @@ program test
 
      call my_pc%node(1)%set_debug('off')
      call my_pc%node(1)%get_turbo()
+   call my_pc%deselect()
 
 end program test

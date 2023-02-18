@@ -19,5 +19,6 @@ program test
     !    call my_pc%node(1)%cpu(2)%set_scaling_min_freq(800000)
     !    call my_pc%node(1)%cpu(2)%set_scaling_governor('powersave')
     !    call my_pc%node(1)%cpu(2)%set_energy_performance('performance')
+   call my_pc%deselect()
 
 end program test
