@@ -9,3 +9,5 @@ auto-tests       = true
 auto-examples    = true
 [install]
 library          = false
+[dependencies]
+M_CLI2 = {git="https://github.com/urbanjost/M_CLI2.git"}
