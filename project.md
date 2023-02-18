@@ -1,6 +1,6 @@
 project:             ForClust
 summary:             ![Forclust](|media|/logo.png)
-version:             v0.2.0
+version:             v0.3.0
 year:                2023
 project_github:      https://github.com/gha3mi/forclust
 author:              Seyed Ali Ghasemi
