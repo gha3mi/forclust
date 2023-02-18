@@ -790,7 +790,7 @@ contains
       if (allocated(this%debug))     deallocate(this%debug)
       if (allocated(this%path_node)) deallocate(this%path_node)
       if (allocated(this%turbo))     deallocate(this%turbo)
-      call this%cpu(:)%deselect()
+      if (allocated(this%cpu))       call this%cpu(:)%deselect()
    end subroutine deallocate_linux_nodes
    !===============================================================================
 
@@ -800,7 +800,7 @@ contains
    elemental subroutine deallocate_cluster(this)
       class(cluster), intent(inout) :: this
 
-      call this%node(:)%deselect()
+      if (allocated(this%node)) call this%node(:)%deselect()
       call this%backlight%deselect()
    end subroutine deallocate_cluster
    !===============================================================================
