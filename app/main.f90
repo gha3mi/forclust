@@ -17,7 +17,7 @@ program test
    &--node 1 --cpu 1 &
    &--base-freq --cpuinfo-max-freq --cpuinfo-min-freq --energy-performance &
    &--scaling-cur-freq --scaling-governor --scaling-max-freq --scaling-min-freq &
-   &--turbo --is-cpu-online --all-node-info &
+   &--turbo --is-cpu-online --all-nodes-info &
    &--set-turbo on &
    &--set-cpu-offline &
    &--set-cpu-online &
@@ -175,8 +175,8 @@ program test
       end if
 
                         
-      if (specified('all-node-info') ) then
-         if (specified('all-node-info')) call my_pc%print_info()
+      if (specified('all-nodes-info') ) then
+         if (specified('all-nodes-info')) call my_pc%print_info()
       end if
 
    call my_pc%deselect()
