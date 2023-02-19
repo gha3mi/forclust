@@ -274,6 +274,7 @@ call my_pc%select()
     call my_pc%node(1)%cpu(2)%get_cpuinfo_min_freq()
 call my_pc%deselect()
 ```
+-----
 ### energy-performance
 ```bash
 forclust --node 1 -cpu 2 energy-performance
