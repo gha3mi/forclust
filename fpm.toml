@@ -11,3 +11,4 @@ auto-examples    = true
 library          = false
 [dependencies]
 M_CLI2 = {git="https://github.com/urbanjost/M_CLI2.git"}
+popen-fortran = {git="https://github.com/jacobwilliams/popen-fortran.git"}
