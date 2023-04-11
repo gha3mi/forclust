@@ -73,7 +73,7 @@ module forclust
    contains
       procedure          :: set_debug                 => set_node_debug_switch
       procedure          :: select                    => select_node
-      procedure, private :: find_number_of_cpus ! todo:
+      procedure, private :: find_number_of_cpus
       procedure, private :: is_intel_pstate_available
       procedure          :: get_turbo                 => get_intel_turbo
       procedure          :: set_turbo                 => set_intel_turbo
@@ -90,7 +90,7 @@ module forclust
       type(linux_backlight)                         :: backlight
    contains
       procedure          :: select => select_linux
-      procedure, private :: find_number_of_nodes ! todo:
+      procedure, private :: find_number_of_nodes
       procedure          :: print_info            => print_all_cluster_info
 
       procedure          :: deselect              => deallocate_cluster
@@ -103,18 +103,20 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental pure subroutine find_number_of_nodes(this)
+   elemental impure subroutine find_number_of_nodes(this)
+      use :: popen_module, only: get_command_as_string
       class(cluster), intent(inout) :: this
+      character(len=:), allocatable :: nnodes_char
 
-      ! todo: get total number of linux nodes
-      this%nnodes = 1
+      nnodes_char = get_command_as_string("lscpu | grep 'NUMA node(s):' | awk '{print $3}'")
+      read(nnodes_char,*) this%nnodes
    end subroutine find_number_of_nodes
    !===============================================================================
 
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental pure subroutine select_linux(this)
+   elemental impure subroutine select_linux(this)
       class(cluster), intent(inout) :: this
       character(len=100)            :: current_node_path
       character(len=100)            :: backlight_path
@@ -137,24 +139,12 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental impure subroutine find_number_of_cpus(this)
+      use :: popen_module, only: get_command_as_string
       class(linux_nodes), intent(inout) :: this
-      integer                           :: nunit
-      logical                           :: ex
-      character(len=:), allocatable     :: file_name
+      character(len=:), allocatable     :: ncpu_char
 
-      ! todo: get total number of linux cpus
-      call execute_command_line ("echo $(nproc --all) > /tmp/forclust_ncpus")
-
-      file_name = '/tmp/forclust_ncpus'
-      inquire(file=file_name, exist=ex)
-      if (ex) then
-         open(newunit=nunit, file=file_name, action='read')
-         read(nunit, *) this%ncpus
-         close(nunit)
-      else
-         this%ncpus = 1
-         ! error stop "file not found: "//file_name
-      end if
+      ncpu_char = get_command_as_string('nproc --all')
+      read(ncpu_char,*) this%ncpus
    end subroutine find_number_of_cpus
    !===============================================================================
 

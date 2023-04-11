@@ -4,6 +4,7 @@ I attempted several methods to decrease the noise from my laptop, but none of th
 -----
 ##  Table of Contents
 - [Table of Contents](#table-of-contents)
+- [Required Linux Commands](#required-linux-commands)
 - [Installation](#installation)
   - [fpm](#fpm)
 - [Set Procedures](#set-procedures)
@@ -29,6 +30,14 @@ I attempted several methods to decrease the noise from my laptop, but none of th
   - [all-nodes-info](#all-nodes-info)
 -----
 
+## Required Linux Commands
+
+ForClust requires the following Linux commands to be installed and available in the system path.
+```
+nproc, lscpu, grep, awk
+```
+
+-----
 ## Installation
 
 ### fpm
