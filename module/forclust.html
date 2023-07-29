@@ -1,0 +1,3444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+    <meta name="author" content="Seyed Ali Ghasemi" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>forclust &ndash; ForClust</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+         <script src="../js/jquery-2.1.3.min.js"></script>
+         <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">ForClust <small>0.3.0</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+                 data-toggle="dropdown" role="button"
+                 aria-haspopup="true"
+                 aria-expanded="false">
+                 Contents <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                    <li><a href="../lists/files.html">Source Files</a></li>
+                  <li><a href="../lists/modules.html">Modules</a></li>
+                  <li><a href="../lists/procedures.html">Procedures</a></li>
+                  <li><a href="../lists/types.html">Derived Types</a></li>
+                  <li><a href="../lists/programs.html">Programs</a></li>
+              </ul>
+            </li>
+                <li class="visible-xs hidden-sm visible-lg">
+                  <a href="../lists/files.html">Source Files</a>
+                </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/modules.html">Modules</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/procedures.html">Procedures</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/types.html">Derived Types</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/programs.html">Programs</a>
+              </li>
+          </ul>
+            <form action="../search.html" class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+              </div>
+              <!--
+                  <button type="submit" class="btn btn-default">Submit</button>
+                  -->
+            </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+  <div class="row">
+    <h1>forclust
+      <small>Module</small>
+      
+    </h1>
+      <div class="row" id="info-bar">
+    <div class="col-lg-12">
+      <div class="well well-sm">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+            <li id="meta-author"><i class="fa fa-pencil"></i> Seyed Ali Ghasemi</li>
+
+          <li id="statements"><i class="fa fa-list-ol"></i>
+            <a data-toggle="tooltip"
+               data-placement="bottom" data-html="true"
+               title="100.0% of total for modules and submodules.">509 statements</a>
+          </li>
+
+            <li id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/forclust.f90"> Source File</a>
+            </li>
+        </ul>
+        <ol class="breadcrumb in-well text-right">
+              <li><a href='../sourcefile/forclust.f90.html'>forclust.f90</a></li>
+          <li class="active">forclust</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#types-0">Derived Types</a>
+        </h3>
+      </div>
+      <div id="types-0" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/forclust.html#type-linux_backlight">linux_backlight</a>
+            <a class="list-group-item" href="../module/forclust.html#type-linux_cpu">linux_cpu</a>
+            <a class="list-group-item" href="../module/forclust.html#type-linux_nodes">linux_nodes</a>
+            <a class="list-group-item" href="../module/forclust.html#type-cluster">cluster</a>
+        </div>
+      </div>
+    </div>
+
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#subs-0">Subroutines</a>
+        </h3>
+      </div>
+      <div id="subs-0" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/forclust.html#proc-find_number_of_nodes">find_number_of_nodes</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-select_linux">select_linux</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-find_number_of_cpus">find_number_of_cpus</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-select_node">select_node</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-is_cpu_online">is_cpu_online</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-get_cpu_base_frequency">get_cpu_base_frequency</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-get_cpuinfo_max_frequency">get_cpuinfo_max_frequency</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-get_cpuinfo_min_frequency">get_cpuinfo_min_frequency</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-get_cpu_scaling_cur_frequency">get_cpu_scaling_cur_frequency</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-get_cpu_scaling_max_frequency">get_cpu_scaling_max_frequency</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-get_cpu_scaling_min_frequency">get_cpu_scaling_min_frequency</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-get_cpu_scaling_governor">get_cpu_scaling_governor</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-get_cpu_energy_performance_preference">get_cpu_energy_performance_preference</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-set_cpu_offline">set_cpu_offline</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-set_cpu_online">set_cpu_online</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-set_cpu_scaling_max_freq">set_cpu_scaling_max_freq</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-set_cpu_scaling_min_freq">set_cpu_scaling_min_freq</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-set_cpu_scaling_governor">set_cpu_scaling_governor</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-set_cpu_energy_performance_preference">set_cpu_energy_performance_preference</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-is_intel_pstate_available">is_intel_pstate_available</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-get_intel_turbo">get_intel_turbo</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-set_intel_turbo">set_intel_turbo</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-set_cpu_debug_switch">set_cpu_debug_switch</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-set_node_debug_switch">set_node_debug_switch</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-print_all_cluster_info">print_all_cluster_info</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-select_backlight">select_backlight</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-set_backlight_debug_switch">set_backlight_debug_switch</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-get_backlight_actual_brightness">get_backlight_actual_brightness</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-get_backlight_max_brightness">get_backlight_max_brightness</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-set_backlight_brightness">set_backlight_brightness</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-deallocate_linux_backlight">deallocate_linux_backlight</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-deallocate_linux_cpu">deallocate_linux_cpu</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-deallocate_linux_nodes">deallocate_linux_nodes</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-deallocate_cluster">deallocate_cluster</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+
+    <div class="col-md-9" id='text'>
+      
+<br>      
+          <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Used by</h3>
+      </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+            <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: module~~forclust~~UsedByGraph Pages: 1 -->
+<svg id="moduleforclustUsedByGraph" width="152pt" height="788pt"
+ viewBox="0.00 0.00 152.00 788.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~forclust~~UsedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 784)">
+<title>module~~forclust~~UsedByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-784 148,-784 148,4 -4,4"/>
+<!-- module~forclust -->
+<g id="module~~forclust~~UsedByGraph_node1" class="node">
+<title>module~forclust</title>
+<polygon fill="none" stroke="black" points="54,-402 0,-402 0,-378 54,-378 54,-402"/>
+<text text-anchor="middle" x="27" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50">forclust</text>
+</g>
+<!-- program~test -->
+<g id="module~~forclust~~UsedByGraph_node2" class="node">
+<title>program~test</title>
+<g id="a_module~~forclust~~UsedByGraph_node2"><a xlink:href=".././program/test.html" xlink:title="test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="144,-780 90,-780 90,-756 144,-756 144,-780"/>
+<text text-anchor="middle" x="117" y="-765.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test</text>
+</a>
+</g>
+</g>
+<!-- program~test&#45;&gt;module~forclust -->
+<g id="module~~forclust~~UsedByGraph_edge1" class="edge">
+<title>program~test&#45;&gt;module~forclust</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M97.5,-755.92C94.61,-753.3 91.94,-750.3 90,-747 56.09,-689.34 35.73,-481.12 29.81,-412.27"/>
+<polygon fill="#255000" stroke="#255000" points="33.29,-411.79 28.96,-402.12 26.31,-412.38 33.29,-411.79"/>
+</g>
+<!-- program~test~10 -->
+<g id="module~~forclust~~UsedByGraph_node3" class="node">
+<title>program~test~10</title>
+<g id="a_module~~forclust~~UsedByGraph_node3"><a xlink:href=".././program/test~10.html" xlink:title="test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="144,-738 90,-738 90,-714 144,-714 144,-738"/>
+<text text-anchor="middle" x="117" y="-723.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test</text>
+</a>
+</g>
+</g>
+<!-- program~test~10&#45;&gt;module~forclust -->
+<g id="module~~forclust~~UsedByGraph_edge2" class="edge">
+<title>program~test~10&#45;&gt;module~forclust</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M97.56,-713.89C94.66,-711.26 91.98,-708.28 90,-705 31.53,-608.09 26.81,-466.74 27.36,-412.41"/>
+<polygon fill="#255000" stroke="#255000" points="30.86,-412.25 27.54,-402.19 23.86,-412.12 30.86,-412.25"/>
+</g>
+<!-- program~test~11 -->
+<g id="module~~forclust~~UsedByGraph_node4" class="node">
+<title>program~test~11</title>
+<g id="a_module~~forclust~~UsedByGraph_node4"><a xlink:href=".././program/test~11.html" xlink:title="test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="144,-696 90,-696 90,-672 144,-672 144,-696"/>
+<text text-anchor="middle" x="117" y="-681.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test</text>
+</a>
+</g>
+</g>
+<!-- program~test~11&#45;&gt;module~forclust -->
+<g id="module~~forclust~~UsedByGraph_edge3" class="edge">
+<title>program~test~11&#45;&gt;module~forclust</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M97.64,-671.84C94.73,-669.22 92.03,-666.25 90,-663 38.84,-580.92 29.75,-461.49 28.24,-412.37"/>
+<polygon fill="#255000" stroke="#255000" points="31.74,-412.14 28.01,-402.22 24.74,-412.3 31.74,-412.14"/>
+</g>
+<!-- program~test~12 -->
+<g id="module~~forclust~~UsedByGraph_node5" class="node">
+<title>program~test~12</title>
+<g id="a_module~~forclust~~UsedByGraph_node5"><a xlink:href=".././program/test~12.html" xlink:title="test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="144,-654 90,-654 90,-630 144,-630 144,-654"/>
+<text text-anchor="middle" x="117" y="-639.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test</text>
+</a>
+</g>
+</g>
+<!-- program~test~12&#45;&gt;module~forclust -->
+<g id="module~~forclust~~UsedByGraph_edge4" class="edge">
+<title>program~test~12&#45;&gt;module~forclust</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M97.74,-629.77C94.83,-627.16 92.09,-624.21 90,-621 46.05,-553.44 33.1,-455.53 29.41,-412.13"/>
+<polygon fill="#255000" stroke="#255000" points="32.9,-411.8 28.64,-402.1 25.92,-412.33 32.9,-411.8"/>
+</g>
+<!-- program~test~13 -->
+<g id="module~~forclust~~UsedByGraph_node6" class="node">
+<title>program~test~13</title>
+<g id="a_module~~forclust~~UsedByGraph_node6"><a xlink:href=".././program/test~13.html" xlink:title="test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="144,-612 90,-612 90,-588 144,-588 144,-612"/>
+<text text-anchor="middle" x="117" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test</text>
+</a>
+</g>
+</g>
+<!-- program~test~13&#45;&gt;module~forclust -->
+<g id="module~~forclust~~UsedByGraph_edge5" class="edge">
+<title>program~test~13&#45;&gt;module~forclust</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M98.16,-587.91C95.13,-585.25 92.24,-582.25 90,-579 53.38,-525.94 37.2,-449.76 31.12,-412.39"/>
+<polygon fill="#255000" stroke="#255000" points="34.52,-411.47 29.55,-402.11 27.6,-412.53 34.52,-411.47"/>
+</g>
+<!-- program~test~14 -->
+<g id="module~~forclust~~UsedByGraph_node7" class="node">
+<title>program~test~14</title>
+<g id="a_module~~forclust~~UsedByGraph_node7"><a xlink:href=".././program/test~14.html" xlink:title="test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="144,-570 90,-570 90,-546 144,-546 144,-570"/>
+<text text-anchor="middle" x="117" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test</text>
+</a>
+</g>
+</g>
+<!-- program~test~14&#45;&gt;module~forclust -->
+<g id="module~~forclust~~UsedByGraph_edge6" class="edge">
+<title>program~test~14&#45;&gt;module~forclust</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M98.64,-545.99C95.49,-543.29 92.44,-540.25 90,-537 60.48,-497.78 42.12,-442.41 33.61,-412.05"/>
+<polygon fill="#255000" stroke="#255000" points="36.9,-410.81 30.92,-402.07 30.15,-412.63 36.9,-410.81"/>
+</g>
+<!-- program~test~15 -->
+<g id="module~~forclust~~UsedByGraph_node8" class="node">
+<title>program~test~15</title>
+<g id="a_module~~forclust~~UsedByGraph_node8"><a xlink:href=".././program/test~15.html" xlink:title="test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="144,-528 90,-528 90,-504 144,-504 144,-528"/>
+<text text-anchor="middle" x="117" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test</text>
+</a>
+</g>
+</g>
+<!-- program~test~15&#45;&gt;module~forclust -->
+<g id="module~~forclust~~UsedByGraph_edge7" class="edge">
+<title>program~test~15&#45;&gt;module~forclust</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M99.25,-503.95C95.98,-501.21 92.73,-498.16 90,-495 67.56,-469.02 48.67,-433.82 37.84,-411.51"/>
+<polygon fill="#255000" stroke="#255000" points="40.89,-409.78 33.44,-402.24 34.57,-412.78 40.89,-409.78"/>
+</g>
+<!-- program~test~16 -->
+<g id="module~~forclust~~UsedByGraph_node9" class="node">
+<title>program~test~16</title>
+<g id="a_module~~forclust~~UsedByGraph_node9"><a xlink:href=".././program/test~16.html" xlink:title="test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="144,-486 90,-486 90,-462 144,-462 144,-486"/>
+<text text-anchor="middle" x="117" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test</text>
+</a>
+</g>
+</g>
+<!-- program~test~16&#45;&gt;module~forclust -->
+<g id="module~~forclust~~UsedByGraph_edge8" class="edge">
+<title>program~test~16&#45;&gt;module~forclust</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M100.36,-461.85C96.89,-459.02 93.27,-455.96 90,-453 74.56,-439 58.05,-422.13 45.96,-409.36"/>
+<polygon fill="#255000" stroke="#255000" points="48.44,-406.9 39.04,-402.01 43.34,-411.7 48.44,-406.9"/>
+</g>
+<!-- program~test~17 -->
+<g id="module~~forclust~~UsedByGraph_node10" class="node">
+<title>program~test~17</title>
+<g id="a_module~~forclust~~UsedByGraph_node10"><a xlink:href=".././program/test~17.html" xlink:title="test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="144,-444 90,-444 90,-420 144,-420 144,-444"/>
+<text text-anchor="middle" x="117" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test</text>
+</a>
+</g>
+</g>
+<!-- program~test~17&#45;&gt;module~forclust -->
+<g id="module~~forclust~~UsedByGraph_edge9" class="edge">
+<title>program~test~17&#45;&gt;module~forclust</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M90.55,-419.85C81.79,-415.67 71.83,-410.92 62.48,-406.46"/>
+<polygon fill="#255000" stroke="#255000" points="63.93,-403.27 53.4,-402.12 60.91,-409.59 63.93,-403.27"/>
+</g>
+<!-- program~test~18 -->
+<g id="module~~forclust~~UsedByGraph_node11" class="node">
+<title>program~test~18</title>
+<g id="a_module~~forclust~~UsedByGraph_node11"><a xlink:href=".././program/test~18.html" xlink:title="test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="144,-402 90,-402 90,-378 144,-378 144,-402"/>
+<text text-anchor="middle" x="117" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test</text>
+</a>
+</g>
+</g>
+<!-- program~test~18&#45;&gt;module~forclust -->
+<g id="module~~forclust~~UsedByGraph_edge10" class="edge">
+<title>program~test~18&#45;&gt;module~forclust</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M89.6,-390C81.61,-390 72.69,-390 64.18,-390"/>
+<polygon fill="#255000" stroke="#255000" points="64.08,-386.5 54.08,-390 64.08,-393.5 64.08,-386.5"/>
+</g>
+<!-- program~test~19 -->
+<g id="module~~forclust~~UsedByGraph_node12" class="node">
+<title>program~test~19</title>
+<g id="a_module~~forclust~~UsedByGraph_node12"><a xlink:href=".././program/test~19.html" xlink:title="test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="144,-360 90,-360 90,-336 144,-336 144,-360"/>
+<text text-anchor="middle" x="117" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test</text>
+</a>
+</g>
+</g>
+<!-- program~test~19&#45;&gt;module~forclust -->
+<g id="module~~forclust~~UsedByGraph_edge11" class="edge">
+<title>program~test~19&#45;&gt;module~forclust</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M90.55,-360.15C81.79,-364.33 71.83,-369.08 62.48,-373.54"/>
+<polygon fill="#255000" stroke="#255000" points="60.91,-370.41 53.4,-377.88 63.93,-376.73 60.91,-370.41"/>
+</g>
+<!-- program~test~2 -->
+<g id="module~~forclust~~UsedByGraph_node13" class="node">
+<title>program~test~2</title>
+<g id="a_module~~forclust~~UsedByGraph_node13"><a xlink:href=".././program/test~2.html" xlink:title="test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="144,-318 90,-318 90,-294 144,-294 144,-318"/>
+<text text-anchor="middle" x="117" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test</text>
+</a>
+</g>
+</g>
+<!-- program~test~2&#45;&gt;module~forclust -->
+<g id="module~~forclust~~UsedByGraph_edge12" class="edge">
+<title>program~test~2&#45;&gt;module~forclust</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M100.36,-318.15C96.89,-320.98 93.27,-324.04 90,-327 74.56,-341 58.05,-357.87 45.96,-370.64"/>
+<polygon fill="#255000" stroke="#255000" points="43.34,-368.3 39.04,-377.99 48.44,-373.1 43.34,-368.3"/>
+</g>
+<!-- program~test~3 -->
+<g id="module~~forclust~~UsedByGraph_node14" class="node">
+<title>program~test~3</title>
+<g id="a_module~~forclust~~UsedByGraph_node14"><a xlink:href=".././program/test~3.html" xlink:title="test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="144,-276 90,-276 90,-252 144,-252 144,-276"/>
+<text text-anchor="middle" x="117" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test</text>
+</a>
+</g>
+</g>
+<!-- program~test~3&#45;&gt;module~forclust -->
+<g id="module~~forclust~~UsedByGraph_edge13" class="edge">
+<title>program~test~3&#45;&gt;module~forclust</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M99.25,-276.05C95.98,-278.79 92.73,-281.84 90,-285 67.56,-310.98 48.67,-346.18 37.84,-368.49"/>
+<polygon fill="#255000" stroke="#255000" points="34.57,-367.22 33.44,-377.76 40.89,-370.22 34.57,-367.22"/>
+</g>
+<!-- program~test~4 -->
+<g id="module~~forclust~~UsedByGraph_node15" class="node">
+<title>program~test~4</title>
+<g id="a_module~~forclust~~UsedByGraph_node15"><a xlink:href=".././program/test~4.html" xlink:title="test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="144,-234 90,-234 90,-210 144,-210 144,-234"/>
+<text text-anchor="middle" x="117" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test</text>
+</a>
+</g>
+</g>
+<!-- program~test~4&#45;&gt;module~forclust -->
+<g id="module~~forclust~~UsedByGraph_edge14" class="edge">
+<title>program~test~4&#45;&gt;module~forclust</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M98.64,-234.01C95.49,-236.71 92.44,-239.75 90,-243 60.48,-282.22 42.12,-337.59 33.61,-367.95"/>
+<polygon fill="#255000" stroke="#255000" points="30.15,-367.37 30.92,-377.93 36.9,-369.19 30.15,-367.37"/>
+</g>
+<!-- program~test~5 -->
+<g id="module~~forclust~~UsedByGraph_node16" class="node">
+<title>program~test~5</title>
+<g id="a_module~~forclust~~UsedByGraph_node16"><a xlink:href=".././program/test~5.html" xlink:title="test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="144,-192 90,-192 90,-168 144,-168 144,-192"/>
+<text text-anchor="middle" x="117" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test</text>
+</a>
+</g>
+</g>
+<!-- program~test~5&#45;&gt;module~forclust -->
+<g id="module~~forclust~~UsedByGraph_edge15" class="edge">
+<title>program~test~5&#45;&gt;module~forclust</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M98.16,-192.09C95.13,-194.75 92.24,-197.75 90,-201 53.38,-254.06 37.2,-330.24 31.12,-367.61"/>
+<polygon fill="#255000" stroke="#255000" points="27.6,-367.47 29.55,-377.89 34.52,-368.53 27.6,-367.47"/>
+</g>
+<!-- program~test~6 -->
+<g id="module~~forclust~~UsedByGraph_node17" class="node">
+<title>program~test~6</title>
+<g id="a_module~~forclust~~UsedByGraph_node17"><a xlink:href=".././program/test~6.html" xlink:title="test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="144,-150 90,-150 90,-126 144,-126 144,-150"/>
+<text text-anchor="middle" x="117" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test</text>
+</a>
+</g>
+</g>
+<!-- program~test~6&#45;&gt;module~forclust -->
+<g id="module~~forclust~~UsedByGraph_edge16" class="edge">
+<title>program~test~6&#45;&gt;module~forclust</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M97.74,-150.23C94.83,-152.84 92.09,-155.79 90,-159 46.05,-226.56 33.1,-324.47 29.41,-367.87"/>
+<polygon fill="#255000" stroke="#255000" points="25.92,-367.67 28.64,-377.9 32.9,-368.2 25.92,-367.67"/>
+</g>
+<!-- program~test~7 -->
+<g id="module~~forclust~~UsedByGraph_node18" class="node">
+<title>program~test~7</title>
+<g id="a_module~~forclust~~UsedByGraph_node18"><a xlink:href=".././program/test~7.html" xlink:title="test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="144,-108 90,-108 90,-84 144,-84 144,-108"/>
+<text text-anchor="middle" x="117" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test</text>
+</a>
+</g>
+</g>
+<!-- program~test~7&#45;&gt;module~forclust -->
+<g id="module~~forclust~~UsedByGraph_edge17" class="edge">
+<title>program~test~7&#45;&gt;module~forclust</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M97.64,-108.16C94.73,-110.78 92.03,-113.75 90,-117 38.84,-199.08 29.75,-318.51 28.24,-367.63"/>
+<polygon fill="#255000" stroke="#255000" points="24.74,-367.7 28.01,-377.78 31.74,-367.86 24.74,-367.7"/>
+</g>
+<!-- program~test~8 -->
+<g id="module~~forclust~~UsedByGraph_node19" class="node">
+<title>program~test~8</title>
+<g id="a_module~~forclust~~UsedByGraph_node19"><a xlink:href=".././program/test~8.html" xlink:title="test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="144,-66 90,-66 90,-42 144,-42 144,-66"/>
+<text text-anchor="middle" x="117" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test</text>
+</a>
+</g>
+</g>
+<!-- program~test~8&#45;&gt;module~forclust -->
+<g id="module~~forclust~~UsedByGraph_edge18" class="edge">
+<title>program~test~8&#45;&gt;module~forclust</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M97.56,-66.11C94.66,-68.74 91.98,-71.72 90,-75 31.53,-171.91 26.81,-313.26 27.36,-367.59"/>
+<polygon fill="#255000" stroke="#255000" points="23.86,-367.88 27.54,-377.81 30.86,-367.75 23.86,-367.88"/>
+</g>
+<!-- program~test~9 -->
+<g id="module~~forclust~~UsedByGraph_node20" class="node">
+<title>program~test~9</title>
+<g id="a_module~~forclust~~UsedByGraph_node20"><a xlink:href=".././program/test~9.html" xlink:title="test">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="144,-24 90,-24 90,0 144,0 144,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test</text>
+</a>
+</g>
+</g>
+<!-- program~test~9&#45;&gt;module~forclust -->
+<g id="module~~forclust~~UsedByGraph_edge19" class="edge">
+<title>program~test~9&#45;&gt;module~forclust</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M97.5,-24.08C94.61,-26.7 91.94,-29.7 90,-33 56.09,-90.66 35.73,-298.88 29.81,-367.73"/>
+<polygon fill="#255000" stroke="#255000" points="26.31,-367.62 28.96,-377.88 33.29,-368.21 26.31,-367.62"/>
+</g>
+</g>
+</svg>
+</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+          <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                </div>
+              <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="518pt" height="32pt"
+ viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
+<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+          </li>
+      </ul>
+    </div>
+
+      <br>
+
+      <section class="visible-xs visible-sm hidden-md">
+          <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#types-1">Derived Types</a>
+        </h3>
+      </div>
+      <div id="types-1" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/forclust.html#type-linux_backlight">linux_backlight</a>
+            <a class="list-group-item" href="../module/forclust.html#type-linux_cpu">linux_cpu</a>
+            <a class="list-group-item" href="../module/forclust.html#type-linux_nodes">linux_nodes</a>
+            <a class="list-group-item" href="../module/forclust.html#type-cluster">cluster</a>
+        </div>
+      </div>
+    </div>
+
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#subs-1">Subroutines</a>
+        </h3>
+      </div>
+      <div id="subs-1" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/forclust.html#proc-find_number_of_nodes">find_number_of_nodes</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-select_linux">select_linux</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-find_number_of_cpus">find_number_of_cpus</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-select_node">select_node</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-is_cpu_online">is_cpu_online</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-get_cpu_base_frequency">get_cpu_base_frequency</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-get_cpuinfo_max_frequency">get_cpuinfo_max_frequency</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-get_cpuinfo_min_frequency">get_cpuinfo_min_frequency</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-get_cpu_scaling_cur_frequency">get_cpu_scaling_cur_frequency</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-get_cpu_scaling_max_frequency">get_cpu_scaling_max_frequency</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-get_cpu_scaling_min_frequency">get_cpu_scaling_min_frequency</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-get_cpu_scaling_governor">get_cpu_scaling_governor</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-get_cpu_energy_performance_preference">get_cpu_energy_performance_preference</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-set_cpu_offline">set_cpu_offline</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-set_cpu_online">set_cpu_online</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-set_cpu_scaling_max_freq">set_cpu_scaling_max_freq</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-set_cpu_scaling_min_freq">set_cpu_scaling_min_freq</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-set_cpu_scaling_governor">set_cpu_scaling_governor</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-set_cpu_energy_performance_preference">set_cpu_energy_performance_preference</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-is_intel_pstate_available">is_intel_pstate_available</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-get_intel_turbo">get_intel_turbo</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-set_intel_turbo">set_intel_turbo</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-set_cpu_debug_switch">set_cpu_debug_switch</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-set_node_debug_switch">set_node_debug_switch</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-print_all_cluster_info">print_all_cluster_info</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-select_backlight">select_backlight</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-set_backlight_debug_switch">set_backlight_debug_switch</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-get_backlight_actual_brightness">get_backlight_actual_brightness</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-get_backlight_max_brightness">get_backlight_max_brightness</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-set_backlight_brightness">set_backlight_brightness</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-deallocate_linux_backlight">deallocate_linux_backlight</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-deallocate_linux_cpu">deallocate_linux_cpu</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-deallocate_linux_nodes">deallocate_linux_nodes</a>
+            <a class="list-group-item" href="../module/forclust.html#proc-deallocate_cluster">deallocate_cluster</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+
+
+      </section>
+      <br class="visible-xs visible-sm hidden-md">
+
+
+
+
+
+
+        <section>
+          <h2>Derived Types</h2>
+              <div class="panel panel-default">
+    <div class="panel-heading codesum">
+      <span class="anchor" id="type-linux_backlight"></span>
+      <h3>
+        type, private&nbsp;::&nbsp;
+        <a href='../type/linux_backlight.html'>linux_backlight</a>
+        
+      </h3>
+    </div>
+    <div class="panel-body">
+      
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Visibility</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+<th></th><th>Initial</th>        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-debug"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>debug</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-path_backlight"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>path_backlight</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-actual_brightness"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>actual_brightness</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-brightness"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>brightness</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-max_brightness"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>max_brightness</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+        <h4>Type-Bound Procedures</h4>
+        <table class="table table-striped varlist">
+          <tbody>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_backlight.html#boundprocedure-set_debug'>set_debug</a></strong>
+ =>
+                    <a href='../proc/set_backlight_debug_switch.html'>set_backlight_debug_switch</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_backlight.html#boundprocedure-select'>select</a></strong>
+ =>
+                    <a href='../proc/select_backlight.html'>select_backlight</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_backlight.html#boundprocedure-get_actual_brightness'>get_actual_brightness</a></strong>
+ =>
+                    <a href='../proc/get_backlight_actual_brightness.html'>get_backlight_actual_brightness</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_backlight.html#boundprocedure-get_max_brightness'>get_max_brightness</a></strong>
+ =>
+                    <a href='../proc/get_backlight_max_brightness.html'>get_backlight_max_brightness</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_backlight.html#boundprocedure-set_brightness'>set_brightness</a></strong>
+ =>
+                    <a href='../proc/set_backlight_brightness.html'>set_backlight_brightness</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_backlight.html#boundprocedure-deselect'>deselect</a></strong>
+ =>
+                    <a href='../proc/deallocate_linux_backlight.html'>deallocate_linux_backlight</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum">
+      <span class="anchor" id="type-linux_cpu"></span>
+      <h3>
+        type, private&nbsp;::&nbsp;
+        <a href='../type/linux_cpu.html'>linux_cpu</a>
+        
+      </h3>
+    </div>
+    <div class="panel-body">
+      
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Visibility</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+<th></th><th>Initial</th>        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-debug~3"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>debug</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-path_cpu"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>path_cpu</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-online"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>online</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-base_frequency"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>base_frequency</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cpuinfo_max_freq"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>cpuinfo_max_freq</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cpuinfo_min_freq"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>cpuinfo_min_freq</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-scaling_cur_freq"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>scaling_cur_freq</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-scaling_max_freq"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>scaling_max_freq</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-scaling_min_freq"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>scaling_min_freq</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-scaling_governor"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>scaling_governor</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-energy_performance_preference"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>energy_performance_preference</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+        <h4>Type-Bound Procedures</h4>
+        <table class="table table-striped varlist">
+          <tbody>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_cpu.html#boundprocedure-set_debug~2'>set_debug</a></strong>
+ =>
+                    <a href='../proc/set_cpu_debug_switch.html'>set_cpu_debug_switch</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_cpu.html#boundprocedure-is_online'>is_online</a></strong>
+ =>
+                    <a href='../proc/is_cpu_online.html'>is_cpu_online</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_cpu.html#boundprocedure-get_base_freq'>get_base_freq</a></strong>
+ =>
+                    <a href='../proc/get_cpu_base_frequency.html'>get_cpu_base_frequency</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_cpu.html#boundprocedure-get_cpuinfo_max_freq'>get_cpuinfo_max_freq</a></strong>
+ =>
+                    <a href='../proc/get_cpuinfo_max_frequency.html'>get_cpuinfo_max_frequency</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_cpu.html#boundprocedure-get_cpuinfo_min_freq'>get_cpuinfo_min_freq</a></strong>
+ =>
+                    <a href='../proc/get_cpuinfo_min_frequency.html'>get_cpuinfo_min_frequency</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_cpu.html#boundprocedure-get_scaling_cur_freq'>get_scaling_cur_freq</a></strong>
+ =>
+                    <a href='../proc/get_cpu_scaling_cur_frequency.html'>get_cpu_scaling_cur_frequency</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_cpu.html#boundprocedure-get_scaling_max_freq'>get_scaling_max_freq</a></strong>
+ =>
+                    <a href='../proc/get_cpu_scaling_max_frequency.html'>get_cpu_scaling_max_frequency</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_cpu.html#boundprocedure-get_scaling_min_freq'>get_scaling_min_freq</a></strong>
+ =>
+                    <a href='../proc/get_cpu_scaling_min_frequency.html'>get_cpu_scaling_min_frequency</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_cpu.html#boundprocedure-get_scaling_governor'>get_scaling_governor</a></strong>
+ =>
+                    <a href='../proc/get_cpu_scaling_governor.html'>get_cpu_scaling_governor</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_cpu.html#boundprocedure-get_energy_performance'>get_energy_performance</a></strong>
+ =>
+                    <a href='../proc/get_cpu_energy_performance_preference.html'>get_cpu_energy_performance_preference</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_cpu.html#boundprocedure-set_offline'>set_offline</a></strong>
+ =>
+                    <a href='../proc/set_cpu_offline.html'>set_cpu_offline</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_cpu.html#boundprocedure-set_online'>set_online</a></strong>
+ =>
+                    <a href='../proc/set_cpu_online.html'>set_cpu_online</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_cpu.html#boundprocedure-set_scaling_max_freq'>set_scaling_max_freq</a></strong>
+ =>
+                    <a href='../proc/set_cpu_scaling_max_freq.html'>set_cpu_scaling_max_freq</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_cpu.html#boundprocedure-set_scaling_min_freq'>set_scaling_min_freq</a></strong>
+ =>
+                    <a href='../proc/set_cpu_scaling_min_freq.html'>set_cpu_scaling_min_freq</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_cpu.html#boundprocedure-set_scaling_governor'>set_scaling_governor</a></strong>
+ =>
+                    <a href='../proc/set_cpu_scaling_governor.html'>set_cpu_scaling_governor</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_cpu.html#boundprocedure-set_energy_performance'>set_energy_performance</a></strong>
+ =>
+                    <a href='../proc/set_cpu_energy_performance_preference.html'>set_cpu_energy_performance_preference</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_cpu.html#boundprocedure-deselect~2'>deselect</a></strong>
+ =>
+                    <a href='../proc/deallocate_linux_cpu.html'>deallocate_linux_cpu</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum">
+      <span class="anchor" id="type-linux_nodes"></span>
+      <h3>
+        type, private&nbsp;::&nbsp;
+        <a href='../type/linux_nodes.html'>linux_nodes</a>
+        
+      </h3>
+    </div>
+    <div class="panel-body">
+      
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Visibility</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+<th></th><th>Initial</th>        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-debug~5"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>debug</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-path_node"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>path_node</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-cpu"></span>
+              type(<a href='../type/linux_cpu.html'>linux_cpu</a>),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>cpu</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ncpus"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ncpus</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-turbo"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>turbo</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-is_intel_pstate"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>is_intel_pstate</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+        <h4>Type-Bound Procedures</h4>
+        <table class="table table-striped varlist">
+          <tbody>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_nodes.html#boundprocedure-set_debug~3'>set_debug</a></strong>
+ =>
+                    <a href='../proc/set_node_debug_switch.html'>set_node_debug_switch</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_nodes.html#boundprocedure-select~2'>select</a></strong>
+ =>
+                    <a href='../proc/select_node.html'>select_node</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  private
+                  :: <strong><a href='../type/linux_nodes.html#boundprocedure-find_number_of_cpus'>find_number_of_cpus</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  private
+                  :: <strong><a href='../type/linux_nodes.html#boundprocedure-is_intel_pstate_available'>is_intel_pstate_available</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_nodes.html#boundprocedure-get_turbo'>get_turbo</a></strong>
+ =>
+                    <a href='../proc/get_intel_turbo.html'>get_intel_turbo</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_nodes.html#boundprocedure-set_turbo'>set_turbo</a></strong>
+ =>
+                    <a href='../proc/set_intel_turbo.html'>set_intel_turbo</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/linux_nodes.html#boundprocedure-deselect~3'>deselect</a></strong>
+ =>
+                    <a href='../proc/deallocate_linux_nodes.html'>deallocate_linux_nodes</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum">
+      <span class="anchor" id="type-cluster"></span>
+      <h3>
+        type, public&nbsp;::&nbsp;
+        <a href='../type/cluster.html'>cluster</a>
+        
+      </h3>
+    </div>
+    <div class="panel-body">
+      
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Visibility</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+<th></th><th>Initial</th>        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-node"></span>
+              type(<a href='../type/linux_nodes.html'>linux_nodes</a>),
+            </td>
+              <td>public,</td>
+            <td>
+              dimension(:), allocatable
+            </td>
+            <td>::</td>
+            <td><strong>node</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nnodes"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nnodes</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-backlight"></span>
+              type(<a href='../type/linux_backlight.html'>linux_backlight</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>backlight</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+        <h4>Type-Bound Procedures</h4>
+        <table class="table table-striped varlist">
+          <tbody>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/cluster.html#boundprocedure-select~3'>select</a></strong>
+ =>
+                    <a href='../proc/select_linux.html'>select_linux</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  private
+                  :: <strong><a href='../type/cluster.html#boundprocedure-find_number_of_nodes'>find_number_of_nodes</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/cluster.html#boundprocedure-print_info'>print_info</a></strong>
+ =>
+                    <a href='../proc/print_all_cluster_info.html'>print_all_cluster_info</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/cluster.html#boundprocedure-deselect~4'>deselect</a></strong>
+ =>
+                    <a href='../proc/deallocate_cluster.html'>deallocate_cluster</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+        <section>
+          <h2>Subroutines</h2>
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-find_number_of_nodes"></span><h3>private impure elemental subroutine <a href='../proc/find_number_of_nodes.html'>find_number_of_nodes</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/cluster.html'>cluster</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-select_linux"></span><h3>private impure elemental subroutine <a href='../proc/select_linux.html'>select_linux</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/cluster.html'>cluster</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-find_number_of_cpus"></span><h3>private impure elemental subroutine <a href='../proc/find_number_of_cpus.html'>find_number_of_cpus</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_nodes.html'>linux_nodes</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-select_node"></span><h3>private impure elemental subroutine <a href='../proc/select_node.html'>select_node</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_nodes.html'>linux_nodes</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-is_cpu_online"></span><h3>private impure elemental subroutine <a href='../proc/is_cpu_online.html'>is_cpu_online</a>(this, online)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_cpu.html'>linux_cpu</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>online</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-get_cpu_base_frequency"></span><h3>private impure elemental subroutine <a href='../proc/get_cpu_base_frequency.html'>get_cpu_base_frequency</a>(this, base_frequency)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_cpu.html'>linux_cpu</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>base_frequency</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-get_cpuinfo_max_frequency"></span><h3>private impure elemental subroutine <a href='../proc/get_cpuinfo_max_frequency.html'>get_cpuinfo_max_frequency</a>(this, cpuinfo_max_freq)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_cpu.html'>linux_cpu</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>cpuinfo_max_freq</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-get_cpuinfo_min_frequency"></span><h3>private impure elemental subroutine <a href='../proc/get_cpuinfo_min_frequency.html'>get_cpuinfo_min_frequency</a>(this, cpuinfo_min_freq)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_cpu.html'>linux_cpu</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>cpuinfo_min_freq</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-get_cpu_scaling_cur_frequency"></span><h3>private impure elemental subroutine <a href='../proc/get_cpu_scaling_cur_frequency.html'>get_cpu_scaling_cur_frequency</a>(this, scaling_cur_freq)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_cpu.html'>linux_cpu</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>scaling_cur_freq</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-get_cpu_scaling_max_frequency"></span><h3>private impure elemental subroutine <a href='../proc/get_cpu_scaling_max_frequency.html'>get_cpu_scaling_max_frequency</a>(this, scaling_max_freq)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_cpu.html'>linux_cpu</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>scaling_max_freq</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-get_cpu_scaling_min_frequency"></span><h3>private impure elemental subroutine <a href='../proc/get_cpu_scaling_min_frequency.html'>get_cpu_scaling_min_frequency</a>(this, scaling_min_freq)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_cpu.html'>linux_cpu</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>scaling_min_freq</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-get_cpu_scaling_governor"></span><h3>private impure elemental subroutine <a href='../proc/get_cpu_scaling_governor.html'>get_cpu_scaling_governor</a>(this, scaling_governor)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_cpu.html'>linux_cpu</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>scaling_governor</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-get_cpu_energy_performance_preference"></span><h3>private impure elemental subroutine <a href='../proc/get_cpu_energy_performance_preference.html'>get_cpu_energy_performance_preference</a>(this, energy_performance_preference)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_cpu.html'>linux_cpu</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>energy_performance_preference</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_cpu_offline"></span><h3>private impure elemental subroutine <a href='../proc/set_cpu_offline.html'>set_cpu_offline</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_cpu.html'>linux_cpu</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_cpu_online"></span><h3>private impure elemental subroutine <a href='../proc/set_cpu_online.html'>set_cpu_online</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_cpu.html'>linux_cpu</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_cpu_scaling_max_freq"></span><h3>private impure elemental subroutine <a href='../proc/set_cpu_scaling_max_freq.html'>set_cpu_scaling_max_freq</a>(this, max_freq)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_cpu.html'>linux_cpu</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>max_freq</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_cpu_scaling_min_freq"></span><h3>private impure elemental subroutine <a href='../proc/set_cpu_scaling_min_freq.html'>set_cpu_scaling_min_freq</a>(this, min_freq)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_cpu.html'>linux_cpu</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>min_freq</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_cpu_scaling_governor"></span><h3>private impure elemental subroutine <a href='../proc/set_cpu_scaling_governor.html'>set_cpu_scaling_governor</a>(this, scaling_governor)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_cpu.html'>linux_cpu</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>scaling_governor</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_cpu_energy_performance_preference"></span><h3>private impure elemental subroutine <a href='../proc/set_cpu_energy_performance_preference.html'>set_cpu_energy_performance_preference</a>(this, energy_performance_preference)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_cpu.html'>linux_cpu</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>energy_performance_preference</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-is_intel_pstate_available"></span><h3>private impure elemental subroutine <a href='../proc/is_intel_pstate_available.html'>is_intel_pstate_available</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_nodes.html'>linux_nodes</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-get_intel_turbo"></span><h3>private impure elemental subroutine <a href='../proc/get_intel_turbo.html'>get_intel_turbo</a>(this, turbo)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_nodes.html'>linux_nodes</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>turbo</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_intel_turbo"></span><h3>private impure elemental subroutine <a href='../proc/set_intel_turbo.html'>set_intel_turbo</a>(this, turbo)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_nodes.html'>linux_nodes</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>turbo</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_cpu_debug_switch"></span><h3>private pure elemental subroutine <a href='../proc/set_cpu_debug_switch.html'>set_cpu_debug_switch</a>(this, debug)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_cpu.html'>linux_cpu</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>debug</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_node_debug_switch"></span><h3>private pure elemental subroutine <a href='../proc/set_node_debug_switch.html'>set_node_debug_switch</a>(this, debug)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_nodes.html'>linux_nodes</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>debug</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_all_cluster_info"></span><h3>private impure elemental subroutine <a href='../proc/print_all_cluster_info.html'>print_all_cluster_info</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/cluster.html'>cluster</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-select_backlight"></span><h3>private impure elemental subroutine <a href='../proc/select_backlight.html'>select_backlight</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_backlight.html'>linux_backlight</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_backlight_debug_switch"></span><h3>private pure elemental subroutine <a href='../proc/set_backlight_debug_switch.html'>set_backlight_debug_switch</a>(this, debug)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_backlight.html'>linux_backlight</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>debug</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-get_backlight_actual_brightness"></span><h3>private impure elemental subroutine <a href='../proc/get_backlight_actual_brightness.html'>get_backlight_actual_brightness</a>(this, actual_brightness)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_backlight.html'>linux_backlight</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>actual_brightness</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-get_backlight_max_brightness"></span><h3>private impure elemental subroutine <a href='../proc/get_backlight_max_brightness.html'>get_backlight_max_brightness</a>(this, max_brightness)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_backlight.html'>linux_backlight</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>max_brightness</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_backlight_brightness"></span><h3>private impure elemental subroutine <a href='../proc/set_backlight_brightness.html'>set_backlight_brightness</a>(this, brightness)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_backlight.html'>linux_backlight</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>brightness</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_linux_backlight"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_linux_backlight.html'>deallocate_linux_backlight</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_backlight.html'>linux_backlight</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_linux_cpu"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_linux_cpu.html'>deallocate_linux_cpu</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_cpu.html'>linux_cpu</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_linux_nodes"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_linux_nodes.html'>deallocate_linux_nodes</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/linux_nodes.html'>linux_nodes</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_cluster"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_cluster.html'>deallocate_cluster</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/cluster.html'>cluster</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-md-6"><p>ForClust was developed by Seyed Ali Ghasemi<br>&copy; 2023 
+</p>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <p class="text-right">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2023-07-29T05:01:03.178000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+         ================================================== -->
+         <!-- Placed at the end of the document so the pages load faster -->
+    <!--
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        -->
+        <script src="../js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+        <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

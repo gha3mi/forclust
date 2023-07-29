@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+    <meta name="author" content="Seyed Ali Ghasemi" >
+    <link rel="icon" href="./favicon.png">
+
+    <title> ForClust </title>
+
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/pygments.css" rel="stylesheet">
+    <link href="./css/font-awesome.min.css" rel="stylesheet">
+    <link href="./css/local.css" rel="stylesheet">
+      <link  href="./tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+         <script src="./js/jquery-2.1.3.min.js"></script>
+         <script src="./js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="./index.html">ForClust <small>0.3.0</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+                 data-toggle="dropdown" role="button"
+                 aria-haspopup="true"
+                 aria-expanded="false">
+                 Contents <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                    <li><a href="./lists/files.html">Source Files</a></li>
+                  <li><a href="./lists/modules.html">Modules</a></li>
+                  <li><a href="./lists/procedures.html">Procedures</a></li>
+                  <li><a href="./lists/types.html">Derived Types</a></li>
+                  <li><a href="./lists/programs.html">Programs</a></li>
+              </ul>
+            </li>
+                <li class="visible-xs hidden-sm visible-lg">
+                  <a href="./lists/files.html">Source Files</a>
+                </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="./lists/modules.html">Modules</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="./lists/procedures.html">Procedures</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="./lists/types.html">Derived Types</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="./lists/programs.html">Programs</a>
+              </li>
+          </ul>
+            <form action="./search.html" class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+              </div>
+              <!--
+                  <button type="submit" class="btn btn-default">Submit</button>
+                  -->
+            </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <p><img alt="Forclust" src="./media/logo.png"></p>
+	<p> Find us on&hellip;</p>
+        <p>
+          <a class="btn btn-lg btn-primary" href="https://github.com/gha3mi/forclust" role="button">GitHub</a>
+        </p>
+      </div>
+
+      <div class="row" id='text'>
+        <div class="col-md-8">
+          <h1>ForClust</h1>
+          <h1><img alt="ForClust" src="media/logo.png"></h1>
+<p>I attempted several methods to decrease the noise from my laptop, but none of them worked. Later, I discovered that I can manually adjust the settings of the CPU and other components in Linux. As a result, I thought of creating a program in Fortran to enhance my control over my system. The goal of this project is to create a program in Fortran that can manage and control a Linux system.</p>
+<hr>
+<h2>Table of Contents</h2>
+<ul>
+<li><a href="#"></a></li>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#required-linux-commands">Required Linux Commands</a></li>
+<li><a href="#installation">Installation</a><ul>
+<li><a href="#fpm">fpm</a></li>
+</ul>
+</li>
+<li><a href="#set-procedures">Set Procedures</a><ul>
+<li><a href="#set-turbo-on">set-turbo on</a></li>
+<li><a href="#set-turbo-off">set-turbo off</a></li>
+<li><a href="#set-cpu-offline">set-cpu-offline</a></li>
+<li><a href="#set-cpu-online">set-cpu-online</a></li>
+<li><a href="#set-scaling-max-freq">set-scaling-max-freq</a></li>
+<li><a href="#set-scaling-min-freq">set-scaling-min-freq</a></li>
+<li><a href="#set-scaling-governor">set-scaling-governor</a></li>
+<li><a href="#set-energy_performance-performance">set-energy_performance performance</a></li>
+</ul>
+</li>
+<li><a href="#get-procedures">Get Procedures</a><ul>
+<li><a href="#base-freq">base-freq</a></li>
+<li><a href="#cpuinfo-max-freq">cpuinfo-max-freq</a></li>
+<li><a href="#cpuinfo-min-freq">cpuinfo-min-freq</a></li>
+<li><a href="#energy-performance">energy-performance</a></li>
+<li><a href="#scaling-cur-freq">scaling-cur-freq</a></li>
+<li><a href="#scaling-governor">scaling-governor</a></li>
+<li><a href="#scaling-max-freq">scaling-max-freq</a></li>
+<li><a href="#scaling-min-freq">scaling-min-freq</a></li>
+<li><a href="#turbo">turbo</a></li>
+<li><a href="#is-cpu-online">is-cpu-online</a></li>
+<li><a href="#all-nodes-info">all-nodes-info</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2>Required Linux Commands</h2>
+<p>ForClust requires the following Linux commands to be installed and available in the system path.</p>
+<div class="codehilite"><pre><span></span><code>nproc, lscpu, grep, awk
+</code></pre></div>
+
+<hr>
+<h2>Installation</h2>
+<h3>fpm</h3>
+<p>ForClust can be cloned and then built using <a href="https://github.com/fortran-lang/fpm">fpm</a>, following the instructions provided in the documentation available on Fortran Package Manager.</p>
+<div class="codehilite"><pre><span></span><code>git clone https://github.com/gha3mi/forclust.git
+<span class="nb">cd</span> forclust
+fpm install --prefix .
+</code></pre></div>
+
+<p>Or you can easily include this package as a dependency in your <code>fpm.toml</code> file.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">[dependencies]</span><span class="w"></span>
+<span class="k">[dependencies.forclust]</span><span class="w"></span>
+<span class="n">git</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://github.com/gha3mi/forclust.git&quot;</span><span class="w"></span>
+</code></pre></div>
+
+<hr>
+<h2>Set Procedures</h2>
+<ul>
+<li>
+<p>Exercise caution and refrain from making any adjustments to system settings unless you have a clear understanding of what you are doing.</p>
+</li>
+<li>
+<p>Sudo privilege is needed for 'set' procedures.</p>
+</li>
+</ul>
+<hr>
+<h3>set-turbo on</h3>
+<div class="codehilite"><pre><span></span><code>sudo forclust --node <span class="m">1</span> --set-turbo on
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">forclust</span><span class="w"></span>
+
+<span class="k">implicit none</span>
+
+<span class="k">type</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">my_pc</span><span class="w"></span>
+
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">set_turbo</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">deselect</span><span class="p">()</span><span class="w"></span>
+</code></pre></div>
+
+<hr>
+<h3>set-turbo off</h3>
+<div class="codehilite"><pre><span></span><code>sudo forclust --node <span class="m">1</span> --set-turbo off
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">forclust</span><span class="w"></span>
+
+<span class="k">implicit none</span>
+
+<span class="k">type</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">my_pc</span><span class="w"></span>
+
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">set_turbo</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">deselect</span><span class="p">()</span><span class="w"></span>
+</code></pre></div>
+
+<hr>
+<h3>set-cpu-offline</h3>
+<div class="codehilite"><pre><span></span><code>sudo forclust --node <span class="m">1</span> -cpu <span class="m">2</span> --set-cpu-offline
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">forclust</span><span class="w"></span>
+
+<span class="k">implicit none</span>
+
+<span class="k">type</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">my_pc</span><span class="w"></span>
+
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">set_offline</span><span class="p">()</span><span class="w"></span>
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">deselect</span><span class="p">()</span><span class="w"></span>
+</code></pre></div>
+
+<hr>
+<h3>set-cpu-online</h3>
+<div class="codehilite"><pre><span></span><code>sudo forclust --node <span class="m">1</span> -cpu <span class="m">2</span> --set-cpu-online
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">forclust</span><span class="w"></span>
+
+<span class="k">implicit none</span>
+
+<span class="k">type</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">my_pc</span><span class="w"></span>
+
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">set_online</span><span class="p">()</span><span class="w"></span>
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">deselect</span><span class="p">()</span><span class="w"></span>
+</code></pre></div>
+
+<hr>
+<h3>set-scaling-max-freq</h3>
+<div class="codehilite"><pre><span></span><code>sudo forclust --node <span class="m">1</span> -cpu <span class="m">2</span> --set-scaling-max-freq <span class="m">2400000</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">forclust</span><span class="w"></span>
+
+<span class="k">implicit none</span>
+
+<span class="k">type</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">my_pc</span><span class="w"></span>
+
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">set_scaling_max_freq</span><span class="p">(</span><span class="mi">2400000</span><span class="p">)</span><span class="w"></span>
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">deselect</span><span class="p">()</span><span class="w"></span>
+</code></pre></div>
+
+<hr>
+<h3>set-scaling-min-freq</h3>
+<div class="codehilite"><pre><span></span><code>sudo forclust --node <span class="m">1</span> -cpu <span class="m">2</span> --set-scaling-min-freq <span class="m">800000</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">forclust</span><span class="w"></span>
+
+<span class="k">implicit none</span>
+
+<span class="k">type</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">my_pc</span><span class="w"></span>
+
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">set_scaling_min_freq</span><span class="p">(</span><span class="mi">800000</span><span class="p">)</span><span class="w"></span>
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">deselect</span><span class="p">()</span><span class="w"></span>
+</code></pre></div>
+
+<hr>
+<h3>set-scaling-governor</h3>
+<div class="codehilite"><pre><span></span><code>sudo forclust --node <span class="m">1</span> -cpu <span class="m">2</span> --set-scaling-governor powersave
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">forclust</span><span class="w"></span>
+
+<span class="k">implicit none</span>
+
+<span class="k">type</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">my_pc</span><span class="w"></span>
+
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">set_scaling_governor</span><span class="p">(</span><span class="n">powersave</span><span class="p">)</span><span class="w"></span>
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">deselect</span><span class="p">()</span><span class="w"></span>
+</code></pre></div>
+
+<hr>
+<h3>set-energy_performance performance</h3>
+<div class="codehilite"><pre><span></span><code>sudo forclust --node <span class="m">1</span> -cpu <span class="m">2</span> --set-energy_performance performance
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">forclust</span><span class="w"></span>
+
+<span class="k">implicit none</span>
+
+<span class="k">type</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">my_pc</span><span class="w"></span>
+
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">set_energy_performance</span><span class="p">(</span><span class="n">performance</span><span class="p">)</span><span class="w"></span>
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">deselect</span><span class="p">()</span><span class="w"></span>
+</code></pre></div>
+
+<hr>
+<h2>Get Procedures</h2>
+<hr>
+<h3>base-freq</h3>
+<div class="codehilite"><pre><span></span><code>forclust --node <span class="m">1</span> -cpu <span class="m">2</span> --base-freq
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">forclust</span><span class="w"></span>
+
+<span class="k">implicit none</span>
+
+<span class="k">type</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">my_pc</span><span class="w"></span>
+
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">get_base_freq</span><span class="p">()</span><span class="w"></span>
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">deselect</span><span class="p">()</span><span class="w"></span>
+</code></pre></div>
+
+<hr>
+<h3>cpuinfo-max-freq</h3>
+<div class="codehilite"><pre><span></span><code>forclust --node <span class="m">1</span> -cpu <span class="m">2</span> --cpuinfo-max-freq
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">forclust</span><span class="w"></span>
+
+<span class="k">implicit none</span>
+
+<span class="k">type</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">my_pc</span><span class="w"></span>
+
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">get_cpuinfo_max_freq</span><span class="p">()</span><span class="w"></span>
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">deselect</span><span class="p">()</span><span class="w"></span>
+</code></pre></div>
+
+<hr>
+<h3>cpuinfo-min-freq</h3>
+<div class="codehilite"><pre><span></span><code>forclust --node <span class="m">1</span> -cpu <span class="m">2</span> --cpuinfo-min-freq
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">forclust</span><span class="w"></span>
+
+<span class="k">implicit none</span>
+
+<span class="k">type</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">my_pc</span><span class="w"></span>
+
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">get_cpuinfo_min_freq</span><span class="p">()</span><span class="w"></span>
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">deselect</span><span class="p">()</span><span class="w"></span>
+</code></pre></div>
+
+<hr>
+<h3>energy-performance</h3>
+<div class="codehilite"><pre><span></span><code>forclust --node <span class="m">1</span> -cpu <span class="m">2</span> energy-performance
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">forclust</span><span class="w"></span>
+
+<span class="k">implicit none</span>
+
+<span class="k">type</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">my_pc</span><span class="w"></span>
+
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">get_energy_performance</span><span class="p">()</span><span class="w"></span>
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">deselect</span><span class="p">()</span><span class="w"></span>
+</code></pre></div>
+
+<hr>
+<h3>scaling-cur-freq</h3>
+<div class="codehilite"><pre><span></span><code>forclust --node <span class="m">1</span> -cpu <span class="m">2</span> --scaling-cur-freq
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">forclust</span><span class="w"></span>
+
+<span class="k">implicit none</span>
+
+<span class="k">type</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">my_pc</span><span class="w"></span>
+
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">get_scaling_cur_freq</span><span class="p">()</span><span class="w"></span>
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">deselect</span><span class="p">()</span><span class="w"></span>
+</code></pre></div>
+
+<hr>
+<h3>scaling-governor</h3>
+<div class="codehilite"><pre><span></span><code>forclust --node <span class="m">1</span> -cpu <span class="m">2</span> --scaling-governor
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">forclust</span><span class="w"></span>
+
+<span class="k">implicit none</span>
+
+<span class="k">type</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">my_pc</span><span class="w"></span>
+
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">get_scaling_governor</span><span class="p">()</span><span class="w"></span>
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">deselect</span><span class="p">()</span><span class="w"></span>
+</code></pre></div>
+
+<hr>
+<h3>scaling-max-freq</h3>
+<div class="codehilite"><pre><span></span><code>forclust --node <span class="m">1</span> -cpu <span class="m">2</span> --scaling-max-freq
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">forclust</span><span class="w"></span>
+
+<span class="k">implicit none</span>
+
+<span class="k">type</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">my_pc</span><span class="w"></span>
+
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">get_scaling_max_freq</span><span class="p">()</span><span class="w"></span>
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">deselect</span><span class="p">()</span><span class="w"></span>
+</code></pre></div>
+
+<hr>
+<h3>scaling-min-freq</h3>
+<div class="codehilite"><pre><span></span><code>forclust --node <span class="m">1</span> -cpu <span class="m">2</span> --scaling-min-freq
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">forclust</span><span class="w"></span>
+
+<span class="k">implicit none</span>
+
+<span class="k">type</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">my_pc</span><span class="w"></span>
+
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">get_scaling_min_freq</span><span class="p">()</span><span class="w"></span>
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">deselect</span><span class="p">()</span><span class="w"></span>
+</code></pre></div>
+
+<hr>
+<h3>turbo</h3>
+<div class="codehilite"><pre><span></span><code>forclust --node <span class="m">1</span> --turbo
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">forclust</span><span class="w"></span>
+
+<span class="k">implicit none</span>
+
+<span class="k">type</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">my_pc</span><span class="w"></span>
+
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">get_turbo</span><span class="p">()</span><span class="w"></span>
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">deselect</span><span class="p">()</span><span class="w"></span>
+</code></pre></div>
+
+<hr>
+<h3>is-cpu-online</h3>
+<div class="codehilite"><pre><span></span><code>forclust --node <span class="m">1</span> -cpu <span class="m">2</span> --is-cpu-online
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">forclust</span><span class="w"></span>
+
+<span class="k">implicit none</span>
+
+<span class="k">type</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">my_pc</span><span class="w"></span>
+
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">set_debug</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">node</span><span class="p">(</span><span class="mi">1</span><span class="p">)%</span><span class="n">cpu</span><span class="p">(</span><span class="mi">2</span><span class="p">)%</span><span class="n">is_online</span><span class="p">()</span><span class="w"></span>
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">deselect</span><span class="p">()</span><span class="w"></span>
+</code></pre></div>
+
+<hr>
+<h3>all-nodes-info</h3>
+<div class="codehilite"><pre><span></span><code>forclust --all-nodes-info
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">use</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">forclust</span><span class="w"></span>
+
+<span class="k">implicit none</span>
+
+<span class="k">type</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">my_pc</span><span class="w"></span>
+
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="k">select</span><span class="p">()</span><span class="w"></span>
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">print_info</span><span class="p">()</span><span class="w"></span>
+<span class="k">call </span><span class="n">my_pc</span><span class="p">%</span><span class="n">deselect</span><span class="p">()</span><span class="w"></span>
+</code></pre></div>
+        </div>
+        <div class="col-md-4">
+	  <div class="well">
+          <h2>Developer Info</h2>
+          <h4>Seyed Ali Ghasemi</h4>
+          
+            <div class="text-center"><div class="btn-group" role="group">
+              <a class="btn btn-lg btn-primary" href="mailto:info@gha3mi.com"><i class="fa fa-envelope fa-lg"></i></a>
+              <a class="btn btn-lg btn-primary" href="https://github.com/gha3mi"><i class="fa fa-github fa-lg"></i></a>
+            </div></div>
+       </div>
+       </div>
+      </div>
+        <div class="row">
+          <hr>
+          <div class="col-xs-6 col-sm-3">
+            <div>
+              <h3>Source Files</h3>
+              <ul><li><a href='./sourcefile/forclust.f90.html'>forclust.f90</a></li><li><a href='./sourcefile/test_backlight.f90.html'>test_backlight.f90</a></li><li><a href='./sourcefile/test_get_base_freq.f90.html'>test_get_base_freq.f90</a></li><li><a href='./sourcefile/test_get_cpuinfo_max_freq.f90.html'>test_get_cpuinfo_max_freq.f90</a></li><li><a href='./sourcefile/test_get_cpuinfo_min_freq.f90.html'>test_get_cpuinfo_min_freq.f90</a></li><li><a href='./sourcefile/test_get_energy_performance.f90.html'>test_get_energy_performance.f90</a></li><li><a href='./sourcefile/test_get_scaling_cur_freq.f90.html'>test_get_scaling_cur_freq.f90</a></li><li><a href='./sourcefile/test_get_scaling_governor.f90.html'>test_get_scaling_governor.f90</a></li><li><a href='./sourcefile/test_get_scaling_max_freq.f90.html'>test_get_scaling_max_freq.f90</a></li><li><a href='./sourcefile/test_get_scaling_min_freq.f90.html'>test_get_scaling_min_freq.f90</a></li></ul>
+            </div>
+            <div>
+              <ul>
+                <li><a href="./lists/files.html"><em>All source files&hellip;</em></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <div>
+              <h3>Modules</h3>
+              <ul><li><a href='./module/forclust.html'>forclust</a></li></ul>
+            </div>
+            <div>
+              <ul>
+                <li><a href="./lists/modules.html"><em>All modules&hellip;</em></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <div>
+              <h3>Procedures</h3>
+              <ul><li><a href='./proc/deallocate_cluster.html'>deallocate_cluster</a></li><li><a href='./proc/deallocate_linux_backlight.html'>deallocate_linux_backlight</a></li><li><a href='./proc/deallocate_linux_cpu.html'>deallocate_linux_cpu</a></li><li><a href='./proc/deallocate_linux_nodes.html'>deallocate_linux_nodes</a></li><li><a href='./proc/find_number_of_cpus.html'>find_number_of_cpus</a></li><li><a href='./proc/find_number_of_nodes.html'>find_number_of_nodes</a></li><li><a href='./proc/get_backlight_actual_brightness.html'>get_backlight_actual_brightness</a></li><li><a href='./proc/get_backlight_max_brightness.html'>get_backlight_max_brightness</a></li><li><a href='./proc/get_cpu_base_frequency.html'>get_cpu_base_frequency</a></li><li><a href='./proc/get_cpu_energy_performance_preference.html'>get_cpu_energy_performance_preference</a></li></ul>
+            </div>
+            <div>
+              <ul>
+                <li><a href="./lists/procedures.html"><em>All procedures&hellip;</em></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3">
+            <div>
+              <h3>Derived Types</h3>
+              <ul><li><a href='./type/cluster.html'>cluster</a></li><li><a href='./type/linux_backlight.html'>linux_backlight</a></li><li><a href='./type/linux_cpu.html'>linux_cpu</a></li><li><a href='./type/linux_nodes.html'>linux_nodes</a></li></ul>
+            </div>
+            <div>
+              <ul>
+                <li><a href="./lists/types.html"><em>All derived types&hellip;</em></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-md-6"><p>ForClust was developed by Seyed Ali Ghasemi<br>&copy; 2023 
+</p>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <p class="text-right">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2023-07-29T05:01:03.178000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+         ================================================== -->
+         <!-- Placed at the end of the document so the pages load faster -->
+    <!--
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        -->
+        <script src="./js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="./js/ie10-viewport-bug-workaround.js"></script>
+
+        <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="./tipuesearch/tipuesearch_content.js"></script>
+          <script src="./tipuesearch/tipuesearch_set.js"></script>
+          <script src="./tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>
