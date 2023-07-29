@@ -1,14 +1,23 @@
 name       = "forclust"
-version    = "0.3.0"
+version    = "VERSION"
 author     = "Seyed Ali Ghasemi"
 maintainer = "info@gha3mi.com"
-copyright  = "Copyright 2023, Seyed Ali Ghasemi"
+copyright  = "Copyright (c) 2023, Seyed Ali Ghasemi"
+license    = "LICENSE"
+
 [build]
 auto-executables = true
 auto-tests       = true
 auto-examples    = true
+
 [install]
-library          = false
+library          = true
+
+[fortran]
+implicit-typing   = false
+implicit-external = false
+source-form       = "free"
+
 [dependencies]
-M_CLI2 = {git="https://github.com/urbanjost/M_CLI2.git"}
+M_CLI2        = {git="https://github.com/urbanjost/M_CLI2.git"}
 popen-fortran = {git="https://github.com/jacobwilliams/popen-fortran.git"}
