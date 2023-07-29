@@ -31,6 +31,8 @@ I attempted several methods to decrease the noise from my laptop, but none of th
     - [turbo](#turbo)
     - [is-cpu-online](#is-cpu-online)
     - [all-nodes-info](#all-nodes-info)
+  - [API documentation](#api-documentation)
+  - [Contributing](#contributing)
 -----
 
 ## Required Linux Commands
@@ -56,8 +58,7 @@ Or you can easily include this package as a dependency in your `fpm.toml` file.
 
 ```toml
 [dependencies]
-[dependencies.forclust]
-git = "https://github.com/gha3mi/forclust.git"
+forclust = {git="https://github.com/gha3mi/forclust.git"}
 ```
 
 -----
@@ -442,3 +443,17 @@ call my_pc%select()
 call my_pc%print_info()
 call my_pc%deselect()
 ```
+
+## API documentation
+The most up-to-date API documentation for the master branch is available
+[here](https://gha3mi.github.io/forclust/).
+To generate the API documentation for the `ForClust` module using
+[ford](https://github.com/Fortran-FOSS-Programmers/ford) run the following
+command:
+
+```shell
+ford ford.yml
+```
+
+## Contributing
+Contributions to `ForClust` are welcome! If you find any issues or would like to suggest improvements, please open an issue.
